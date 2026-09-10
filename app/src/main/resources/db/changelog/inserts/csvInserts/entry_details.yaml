@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/entry_details.csv
+            tableName: entry_details
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: entry_hour_time
+                  type: integer
+              - column:
+                  name: entry_mins_time
+                  type: integer
+              - column:
+                  name: entry_sec_time
+                  type: timestamp
+              - column:
+                  name: strategy_id
+                  type: integer
+              - column:
+                  name: entry_time
+                  type: timestamp
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexRollingStraddleYamlInserts/rolling_straddle.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexRollingStraddleYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexRollingStraddleYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

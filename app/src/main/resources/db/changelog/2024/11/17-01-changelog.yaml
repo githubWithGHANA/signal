@@ -1,0 +1,2025 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1731841331420-1
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: app_user_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-2
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: entity_days_mapping_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-3
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: entry_days_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-4
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: entry_details_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-5
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: exit_setting_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-6
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: instrument_details_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-7
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: leg_line_expiry_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-8
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: orders_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-9
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: positions_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-10
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: signals_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-11
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: status_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-12
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: strategies_legs_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-13
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: strategies_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-14
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: strategy_category_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-15
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: strikes_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-16
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: underlying_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-17
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: user_admins_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-18
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: user_roles_seq
+            startValue: 1
+  - changeSet:
+      id: 1731841331420-19
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_app_user
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: VARCHAR(255)
+              - column:
+                  name: token_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_name
+                  type: VARCHAR(255)
+              - column:
+                  name: user_account_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_role
+                  type: BIGINT
+              - column:
+                  name: tenent_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: admin_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: investment
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: current_value
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: today_profit_loss
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: overall_profit_loss
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: app_user
+  - changeSet:
+      id: 1731841331420-20
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_entity_days_mapping
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: sc_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: entity_days_mapping
+  - changeSet:
+      id: 1731841331420-21
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_entry_days
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: day
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+              - column:
+                  name: days
+                  type: BIGINT
+            tableName: entry_days
+  - changeSet:
+      id: 1731841331420-22
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_entry_details
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: entry_hour_time
+                  type: INT
+              - column:
+                  name: entry_mins_time
+                  type: INT
+              - column:
+                  name: entry_sec_time
+                  type: DATETIME
+              - column:
+                  name: entry_time
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: entry_details
+  - changeSet:
+      id: 1731841331420-23
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_exit_details
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: s_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: profit_mtm_unit_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: profit_mtm_unit_value
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: stoploss_mtm_unit_value
+                  type: BIGINT
+              - column:
+                  name: exit_on_expiry_flag
+                  type: VARCHAR(255)
+              - column:
+                  name: exit_after_entry_days
+                  type: INT
+              - column:
+                  name: exit-time
+                  type: DATETIME
+              - column:
+                  name: exit_hour_time
+                  type: TIME
+              - column:
+                  name: exit_mins_time
+                  type: TIME
+              - column:
+                  name: exit_sec_time
+                  type: TIME
+              - column:
+                  name: target_unit_type
+                  type: VARCHAR(255)
+              - column:
+                  name: target_unit_value
+                  type: BIGINT
+              - column:
+                  name: stop_loss_unit_type
+                  type: VARCHAR(255)
+              - column:
+                  name: stop_loss_unit_value
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: exit_details
+  - changeSet:
+      id: 1731841331420-24
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_instrument_details
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_segment_id
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: index
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_instrument_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: expiry_date
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: instrument_details
+  - changeSet:
+      id: 1731841331420-25
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_leg_id
+                  name: entry_details_id
+                  type: BIGINT
+              - column:
+                  name: strategy_leg_id
+                  type: BIGINT
+            tableName: leg_id
+  - changeSet:
+      id: 1731841331420-26
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_leg_line_expiry
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: leg_exp_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: leg_line_expiry_date
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: leg_line_expiry
+  - changeSet:
+      id: 1731841331420-27
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_order
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_order_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: sc_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: execution_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: deployed_on
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: quantity
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_instrument_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_segment
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: underlying
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: instrument_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: leg_exp_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: signal_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: order
+  - changeSet:
+      id: 1731841331420-28
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_position
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: postion_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: sc_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: execution_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: deployed_on
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: quantity
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: average_price
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_instrument_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_segment
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: underlying
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: instrument_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: broker_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: total_open_quantity
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: total_mtm
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: position
+  - changeSet:
+      id: 1731841331420-29
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_signal
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: strategy_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: execution_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: deployed_on
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: multiplier
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: capital
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+              - column:
+                  name: signal_id
+                  type: BIGINT
+            tableName: signal
+  - changeSet:
+      id: 1731841331420-30
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_status
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: status
+  - changeSet:
+      id: 1731841331420-31
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_strategy
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: s_id
+                  type: BIGINT
+              - column:
+                  name: entry_id
+                  type: BIGINT
+              - column:
+                  name: addition_id
+                  type: BIGINT
+              - column:
+                  name: exit_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: desc
+                  type: VARCHAR(255)
+              - column:
+                  name: type_of_strategy
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: underlying_id
+                  type: BIGINT
+              - column:
+                  name: underling_type
+                  type: VARCHAR(255)
+              - column:
+                  name: s_position_type
+                  type: VARCHAR(255)
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: atm_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: expiry
+                  type: VARCHAR(255)
+              - column:
+                  name: admin_id
+                  type: BIGINT
+              - column:
+                  name: expiry_type
+                  type: VARCHAR(255)
+              - column:
+                  name: category
+                  type: VARCHAR(255)
+              - column:
+                  name: min_capital
+                  type: BIGINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: multiplier
+                  type: BIGINT
+              - column:
+                  name: stop_loss
+                  type: BIGINT
+              - column:
+                  name: delta_slippage
+                  type: BIGINT
+              - column:
+                  name: target
+                  type: BIGINT
+              - column:
+                  name: execution_type
+                  type: VARCHAR(255)
+              - column:
+                  name: re_signal_count
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: strategy
+  - changeSet:
+      id: 1731841331420-32
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_strategy_addition
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: sc_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: stratagy_id
+                  type: BIGINT
+              - column:
+                  name: delta_slippage
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: strategy_addition
+  - changeSet:
+      id: 1731841331420-33
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_strategy_category
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: s_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: s_desc
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: s_category
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: strategy_category
+  - changeSet:
+      id: 1731841331420-34
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_strategy_id
+                  name: entry_details_id
+                  type: BIGINT
+              - column:
+                  name: strategys_id
+                  type: BIGINT
+            tableName: strategy_id
+  - changeSet:
+      id: 1731841331420-35
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_strategy_leg
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: sc_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: segment
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: buy_sell_flag
+                  type: VARCHAR(255)
+              - column:
+                  name: skt_name
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_exp_name
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_line_expiry_date
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: no_of_lots
+                  type: BIGINT
+              - column:
+                  name: target_unit
+                  type: VARCHAR(255)
+              - column:
+                  name: target_unit_value
+                  type: BIGINT
+              - column:
+                  name: stop_loss_unit
+                  type: VARCHAR(255)
+              - column:
+                  name: stop_loss_unit_value
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: signal_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: price
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: exchange_instrument_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: admin_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: option_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: leg_type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: quantity
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: last_updated_quantity
+                  type: BIGINT
+              - column:
+                  name: entry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: multi_orders_flag
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: strategy_leg
+                  type: BIGINT
+              - column:
+                  name: leg_id
+                  type: BIGINT
+            tableName: strategy_leg
+  - changeSet:
+      id: 1731841331420-36
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_strike
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: stk_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: strike
+  - changeSet:
+      id: 1731841331420-37
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_underlying
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: u_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: u_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: underlying
+  - changeSet:
+      id: 1731841331420-38
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user_admin
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: admin_id
+                  type: BIGINT
+              - column:
+                  name: admin_name
+                  type: VARCHAR(255)
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+              - column:
+                  name: middle_name
+                  type: VARCHAR(255)
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+              - column:
+                  name: role_name
+                  type: VARCHAR(255)
+              - column:
+                  name: admin_level
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  name: phone_number
+                  type: VARCHAR(255)
+              - column:
+                  name: otp
+                  type: VARCHAR(255)
+              - column:
+                  name: otp_expiry
+                  type: DATETIME
+              - column:
+                  name: otp_status
+                  type: VARCHAR(255)
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: user_admin
+  - changeSet:
+      id: 1731841331420-39
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_userrole
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: role_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: role_desc
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_by
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+            tableName: userrole
+  - changeSet:
+      id: 1731841331420-40
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: user_id
+            constraintName: uc_app_user_user
+            tableName: app_user
+  - changeSet:
+      id: 1731841331420-41
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: user_role
+            constraintName: uc_app_user_user_role
+            tableName: app_user
+  - changeSet:
+      id: 1731841331420-42
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: s_id
+            constraintName: uc_exit_details_s
+            tableName: exit_details
+  - changeSet:
+      id: 1731841331420-43
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: addition_id
+            constraintName: uc_strategy_addition
+            tableName: strategy
+  - changeSet:
+      id: 1731841331420-44
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: stratagy_id
+            constraintName: uc_strategy_addition_stratagy
+            tableName: strategy_addition
+  - changeSet:
+      id: 1731841331420-45
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: entry_id
+            constraintName: uc_strategy_entry
+            tableName: strategy
+  - changeSet:
+      id: 1731841331420-46
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: exit_id
+            constraintName: uc_strategy_exit
+            tableName: strategy
+  - changeSet:
+      id: 1731841331420-47
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: entry_id
+            constraintName: uc_strategy_leg_entry
+            tableName: strategy_leg
+  - changeSet:
+      id: 1731841331420-48
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: email
+            constraintName: uc_user_admin_email
+            tableName: user_admin
+  - changeSet:
+      id: 1731841331420-49
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: app_user
+            constraintName: FK_APP_USER_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 1731841331420-50
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_role
+            baseTableName: app_user
+            constraintName: FK_APP_USER_ON_USER_ROLE
+            referencedColumnNames: id
+            referencedTableName: userrole
+  - changeSet:
+      id: 1731841331420-51
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: entity_days_mapping
+            constraintName: FK_ENTITY_DAYS_MAPPING_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 1731841331420-52
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: days
+            baseTableName: entry_days
+            constraintName: FK_ENTRY_DAYS_ON_DAYS
+            referencedColumnNames: id
+            referencedTableName: entry_details
+  - changeSet:
+      id: 1731841331420-53
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: s_id
+            baseTableName: exit_details
+            constraintName: FK_EXIT_DETAILS_ON_S
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1731841331420-54
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: leg_exp_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_LEG_EXP
+            referencedColumnNames: id
+            referencedTableName: leg_line_expiry
+  - changeSet:
+      id: 1731841331420-55
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 1731841331420-56
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: signal_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_SIGNAL
+            referencedColumnNames: id
+            referencedTableName: signal
+  - changeSet:
+      id: 1731841331420-57
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_USER
+            referencedColumnNames: id
+            referencedTableName: userrole
+  - changeSet:
+      id: 1731841331420-58
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: position
+            constraintName: FK_POSITION_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 1731841331420-59
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: position
+            constraintName: FK_POSITION_ON_USER
+            referencedColumnNames: id
+            referencedTableName: userrole
+  - changeSet:
+      id: 1731841331420-60
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: signal_id
+            baseTableName: signal
+            constraintName: FK_SIGNAL_ON_SIGNAL
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1731841331420-61
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: signal
+            constraintName: FK_SIGNAL_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1731841331420-62
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: signal
+            constraintName: FK_SIGNAL_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 1731841331420-63
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: strategy_addition
+            constraintName: FK_STRATEGY_ADDITION_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 1731841331420-64
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: stratagy_id
+            baseTableName: strategy_addition
+            constraintName: FK_STRATEGY_ADDITION_ON_STRATAGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1731841331420-65
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 1731841331420-66
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: entry_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_ENTRY
+            referencedColumnNames: id
+            referencedTableName: entry_details
+  - changeSet:
+      id: 1731841331420-67
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: leg_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_LEG
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1731841331420-68
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 1731841331420-69
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: signal_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_SIGNAL
+            referencedColumnNames: id
+            referencedTableName: signal
+  - changeSet:
+      id: 1731841331420-70
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_leg
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_STRATEGY_LEG
+            referencedColumnNames: id
+            referencedTableName: signal
+  - changeSet:
+      id: 1731841331420-71
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 1731841331420-72
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: addition_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_ADDITION
+            referencedColumnNames: id
+            referencedTableName: strategy_addition
+  - changeSet:
+      id: 1731841331420-73
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 1731841331420-74
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: entry_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_ENTRY
+            referencedColumnNames: id
+            referencedTableName: entry_details
+  - changeSet:
+      id: 1731841331420-75
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: exit_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_EXIT
+            referencedColumnNames: id
+            referencedTableName: exit_details
+  - changeSet:
+      id: 1731841331420-76
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: s_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_S
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 1731841331420-77
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: underlying_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_UNDERLYING
+            referencedColumnNames: id
+            referencedTableName: underlying
+  - changeSet:
+      id: 1731841331420-78
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 1731841331420-79
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: user_admin
+            constraintName: FK_USER_ADMIN_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 1731841331420-80
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: entry_details_id
+            baseTableName: leg_id
+            constraintName: fk_leg_id_on_entry_details
+            referencedColumnNames: id
+            referencedTableName: entry_details
+  - changeSet:
+      id: 1731841331420-81
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_leg_id
+            baseTableName: leg_id
+            constraintName: fk_leg_id_on_strategy_leg
+            referencedColumnNames: id
+            referencedTableName: strategy_leg
+  - changeSet:
+      id: 1731841331420-82
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: entry_details_id
+            baseTableName: strategy_id
+            constraintName: fk_strid_on_entry_details
+            referencedColumnNames: id
+            referencedTableName: entry_details
+  - changeSet:
+      id: 1731841331420-83
+      author: bhargava_g (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategys_id
+            baseTableName: strategy_id
+            constraintName: fk_strid_on_strategy
+            referencedColumnNames: id
+            referencedTableName: strategy
+

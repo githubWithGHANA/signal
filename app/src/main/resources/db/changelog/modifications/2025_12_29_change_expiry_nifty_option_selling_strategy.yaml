@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: nifty_option_selling_mon_tue_only
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: nifty_option_buying_mon_tue_only
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: sensex_option_selling_wed_thr_only
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: sensex_option_buying_wed_thr_only
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: nifty_option_selling_mon_tue_only_copy
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: nifty_option_buying_mon_tue_only_copy
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: sensex_option_selling_wed_thr_only_copy
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+  - changeSet:
+      id: sensex_option_buying_wed_thr_only_copy
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:

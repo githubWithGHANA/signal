@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: ultaDeltaStrategyYamlInserts/ulta_delta_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: ultaDeltaStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: ultaDeltaStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

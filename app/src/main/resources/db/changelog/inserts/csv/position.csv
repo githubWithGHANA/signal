@@ -1,0 +1,6 @@
+id,postion_id,user_id,execution_type,deployed_on,quantity,average_price,exchange_instrument_id,exchange_segment,underlying,instrument_name,broker_id,total_open_quantity,total_mtm,status,strategy_id,created_by,created_at,updated_by,updated_at,delete_indicator,app_user_id
+1000,POS12345,1,Market,2025-01-25T12:00:00Z,100,5000,EX1234,Segment1,Nifty,Instrument A,Broker123,100,50000,Open,1,system,2025-01-09T12:00:00Z,system,2025-01-09T12:00:00Z,N,1
+1001,POS12346,1,Limit,2025-01-25T12:30:00Z,150,5500,EX1235,Segment2,Bank Nifty,Instrument B,Broker124,150,80000,Closed,1,system,2025-01-09T12:30:00Z,system,2025-01-09T12:30:00Z,N,1
+1002,POS12347,1,StopLoss,2025-01-25T13:00:00Z,200,5200,EX1236,Segment1,Nifty,Instrument C,Broker125,200,64000,Open,1,system,2025-01-09T13:00:00Z,system,2025-01-09T13:00:00Z,N,1
+1003,POS12348,1,Market,2025-01-25T14:15:00Z,50,4800,EX1237,Segment2,Bank Nifty,Instrument D,Broker126,50,24000,Open,1,system,2025-01-09T14:15:00Z,system,2025-01-09T14:15:00Z,N,1
+1004,POS12349,1,Limit,2025-01-25T15:30:00Z,250,5300,EX1238,Segment1,Nifty,Instrument E,Broker127,250,132500,Closed,1,system,2025-01-09T15:30:00Z,system,2025-01-09T15:30:00Z,N,1

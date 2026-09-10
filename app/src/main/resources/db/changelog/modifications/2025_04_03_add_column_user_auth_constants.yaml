@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1740456107514-45
+      author: bhargava_g
+      changes:
+        - addColumn:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: xts_token
+                  type: VARCHAR(255)
+

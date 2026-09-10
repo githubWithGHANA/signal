@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/strategy.csv
+            tableName: strategy
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: s_id
+                  type: integer
+              - column:
+                  name: name
+                  type: string
+              - column:
+                  name: description
+                  type: string
+              - column:
+                  name: type_of_strategy
+                  type: string
+              - column:
+                  name: underlying_id
+                  type: integer
+              - column:
+                  name: underling_type
+                  type: string
+              - column:
+                  name: s_position_type
+                  type: string
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: atm_type
+                  type: string
+              - column:
+                  name: expiry
+                  type: string
+              - column:
+                  name: strategy_tag
+                  type: string
+              - column:
+                  name: admin_id
+                  type: integer
+              - column:
+                  name: expiry_type
+                  type: string
+              - column:
+                  name: category
+                  type: string
+              - column:
+                  name: min_capital
+                  type: decimal
+              - column:
+                  name: user_id
+                  type: integer
+              - column:
+                  name: multiplier
+                  type: decimal
+              - column:
+                  name: stop_loss
+                  type: decimal
+              - column:
+                  name: delta_slippage
+                  type: decimal
+              - column:
+                  name: target
+                  type: decimal
+              - column:
+                  name: execution_type
+                  type: string
+              - column:
+                  name: re_signal_count
+                  type: integer
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string
+              - column:
+                  name: strategy_source_id
+                  type: integer
+
+  - changeSet:
+      id: 2
+      author: imran
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: status
+                  value: available
+            where: id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25)
+
+
+
+

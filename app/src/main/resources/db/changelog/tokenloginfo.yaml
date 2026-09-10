@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - changeSet:
+      id: 28
+      author: imran
+      changes:
+        - createTable:
+            tableName: token_log_info
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_token_log_info
+              - column:
+                  name: machine_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: user_agent
+                  type: VARCHAR(255)
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: trade_token
+                  type: VARCHAR(1200)
+              - column:
+                  name: token_type
+                  type: VARCHAR(255)
+              - column:
+                  name: token_generated_time
+                  type: DATETIME
+              - column:
+                  name: welcome_acknowledged_time
+                  type: DATETIME
+              - column:
+                  name: acknowledgement_type
+                  type: VARCHAR(255)
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+
+        - createSequence:
+            sequenceName: token_log_info_seq
+            incrementBy: 1
+            startValue: 1000
+
+
+  - changeSet:
+      id: 29
+      author: uday
+      changes:
+        - addColumn:
+            tableName: token_log_info
+            columns:
+              - column:
+                  name: remarks
+                  type: VARCHAR(255)

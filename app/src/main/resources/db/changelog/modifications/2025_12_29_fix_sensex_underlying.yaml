@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: fix_sensex_underlying_id
+      author: imran
+      validCheckSum: ANY
+      changes:
+        - empty:
+
+
+
+  - changeSet:
+      id: 2025_12_30_update_underlying_for_sensex_strategies
+      author: uday
+      runOnChange: false
+      runAlways: false
+
+      preConditions:
+        - onFail: MARK_RAN
+          onError: HALT
+
+        - tableExists:
+            schemaName: signal
+            tableName: strategy
+
+        - columnExists:
+            schemaName: signal
+            tableName: strategy
+            columnName: id
+
+        - columnExists:
+            schemaName: signal
+            tableName: strategy
+            columnName: strategy_source_id
+
+        - columnExists:
+            schemaName: signal
+            tableName: strategy
+            columnName: underlying_id
+
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: false
+            stripComments: true
+            sql: |
+              UPDATE signal.strategy
+              SET underlying_id = 4
+              WHERE (id IN (48,49,50,51,52,53,54,55)
+                  OR strategy_source_id IN (48,49,50,51,52,53,54,55))
+                AND underlying_id IS DISTINCT FROM 4;

@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author: imran
+      changes:
+        - createTable:
+            tableName: ui_constants
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_ui_constants
+              - column:
+                  name: field_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: code
+                  type: BIGINT
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: pk_ui_constants
+            incrementBy: 1
+            startValue: 1000
+
+  - changeSet:
+      id: 11
+      author: imran
+      changes:
+        - createSequence:
+            sequenceName: ui_constants_seq
+            incrementBy: 1
+            startValue: 1000
+

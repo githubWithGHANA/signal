@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1740456107514-45
+      author: bhargava_g
+      changes:
+        - addColumn:
+            tableName: strategy
+            columns:
+              - column:
+                  name: manual_exit_type
+                  type: VARCHAR(255)
+

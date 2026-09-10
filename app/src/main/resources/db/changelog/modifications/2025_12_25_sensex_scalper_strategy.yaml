@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexScalperStrategyYamlInserts/sensex_scalper_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexScalperStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexScalperStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

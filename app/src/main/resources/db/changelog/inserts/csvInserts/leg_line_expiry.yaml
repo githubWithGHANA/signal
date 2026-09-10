@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/leg_line_expiry.csv
+            tableName: leg_line_expiry
+            separator: ","
+            columns:
+              - column:
+                  name: id
+                  type: long
+              - column:
+                  name: leg_exp_name
+                  type: string
+              - column:
+                  name: leg_line_expiry_date
+                  type: string
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string

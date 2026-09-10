@@ -1,0 +1,40 @@
+services:
+  signal_app:
+    image: ${ECR_REPO}:${IMAGE_TAG:-latest}
+    container_name: signal_app
+    ports:
+      - "8081:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      signal_db:
+        condition: service_healthy
+    networks:
+      - app_network
+
+  signal_db:
+    image: postgres:14
+    container_name: signal_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-signal_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-signal_password}
+      POSTGRES_DB: ${POSTGRES_DB:-signal_db}
+    ports:
+      - "5430:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-signal_user} -d ${POSTGRES_DB:-signal_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - app_network
+
+volumes:
+  postgres_data:
+
+networks:
+  app_network:
+    driver: bridge

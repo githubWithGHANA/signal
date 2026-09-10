@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        body {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          background-color: #f5f7fa;
+          margin: 0;
+          padding: 0;
+        }
+        .email-container {
+          max-width: 600px;
+          margin: 30px auto;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          overflow: hidden;
+        }
+        .email-header {
+          background: linear-gradient(135deg, #ff4d4d 0%, #c70039 100%);
+          color: white;
+          padding: 30px;
+          text-align: center;
+        }
+        .header-icon {
+          font-size: 40px;
+          margin-bottom: 15px;
+        }
+        .email-title {
+          font-size: 22px;
+          font-weight: 700;
+          margin: 0 0 10px;
+        }
+        .email-subtitle {
+          font-size: 14px;
+          opacity: 0.9;
+          margin: 0;
+        }
+        .email-body {
+          padding: 30px;
+        }
+        .alert-card {
+          background-color: #fff5f5;
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 25px;
+          border: 1px solid #ffcccc;
+        }
+        .card-title {
+          font-size: 16px;
+          font-weight: 600;
+          color: #d32f2f;
+          margin-top: 0;
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+        }
+        .card-title svg {
+          margin-right: 8px;
+        }
+        .detail-grid {
+          display: grid;
+          grid-template-columns: 100px 1fr;
+          gap: 10px;
+          font-size: 14px;
+        }
+        .detail-label {
+          color: #666;
+          font-weight: 500;
+        }
+        .detail-value {
+          color: #333;
+          font-weight: 400;
+        }
+        .timeline {
+          margin: 25px 0;
+          position: relative;
+          padding-left: 20px;
+        }
+        .timeline::before {
+          content: '';
+          position: absolute;
+          left: 6px;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background-color: #e0e0e0;
+        }
+        .timeline-item {
+          position: relative;
+          padding-bottom: 20px;
+        }
+        .timeline-item:last-child {
+          padding-bottom: 0;
+        }
+        .timeline-dot {
+          position: absolute;
+          left: -20px;
+          top: 3px;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background-color: #ff4d4d;
+        }
+        .timeline-content {
+          font-size: 13px;
+          color: #555;
+        }
+        .timeline-time {
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 5px;
+        }
+        .email-footer {
+          padding: 20px;
+          text-align: center;
+          font-size: 12px;
+          color: #999;
+          border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="email-header">
+        <div class="header-icon">⚠️</div>
+        <h1 class="email-title">Critical Error Detected</h1>
+        <p class="email-subtitle">Immediate action required for Exit Order failure</p>
+    </div>
+
+    <div class="email-body">
+        <div class="alert-card">
+            <h3 class="card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                ERROR SUMMARY
+            </h3>
+            <div class="detail-grid">
+                <div class="detail-label">Error Code:</div>
+                <div class="detail-value">EXIT-500</div>
+                <div class="detail-label">Occurred at:</div>
+                <div class="detail-value">{{dateTime}}</div>
+                <div class="detail-label">Environment:</div>
+                <div class="detail-value">Production</div>
+                <div class="detail-label">Message:</div>
+                <div class="detail-value">{{errorDetails}}</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 0; font-size: 16px;">Error Timeline</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">[HH:MM:SS]</div>
+                    <div>Error first detected in order execution pipeline</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">[HH:MM:SS]</div>
+                    <div>3 retry attempts failed automatically</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">[HH:MM:SS]</div>
+                    <div>System triggered this critical alert</div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 14px; color: #666;">The technical team has been notified. Please check your dashboard for real-time updates.</p>
+    </div>
+
+    <div class="email-footer">
+        QuantLab Algo | Automated Alert System
+    </div>
+</div>
+</body>
+</html>

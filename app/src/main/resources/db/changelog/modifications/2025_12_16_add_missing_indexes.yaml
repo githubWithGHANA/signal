@@ -1,0 +1,706 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-index-app-user-log-info-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_app_user_log_info_user_id
+                tableName: app_user_log_info
+      changes:
+        - createIndex:
+            indexName: idx_app_user_log_info_user_id
+            tableName: app_user_log_info
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_app_user_log_info_user_id
+            tableName: app_user_log_info
+
+  - changeSet:
+      id: add-index-deployment-errors-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_deployment_errors_user_id
+                tableName: deployment_errors
+      changes:
+        - createIndex:
+            indexName: idx_deployment_errors_user_id
+            tableName: deployment_errors
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_deployment_errors_user_id
+            tableName: deployment_errors
+
+  - changeSet:
+      id: add-index-deployment-errors-strategy-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_deployment_errors_strategy_id
+                tableName: deployment_errors
+      changes:
+        - createIndex:
+            indexName: idx_deployment_errors_strategy_id
+            tableName: deployment_errors
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+      rollback:
+        - dropIndex:
+            indexName: idx_deployment_errors_strategy_id
+            tableName: deployment_errors
+
+  - changeSet:
+      id: add-index-deployment-errors-strategy-leg-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_deployment_errors_strategy_leg_id
+                tableName: deployment_errors
+      changes:
+        - createIndex:
+            indexName: idx_deployment_errors_strategy_leg_id
+            tableName: deployment_errors
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_leg_id
+      rollback:
+        - dropIndex:
+            indexName: idx_deployment_errors_strategy_leg_id
+            tableName: deployment_errors
+
+  - changeSet:
+      id: add-index-entity-days-mapping-sc-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_entity_days_mapping_sc_id
+                tableName: entity_days_mapping
+      changes:
+        - createIndex:
+            indexName: idx_entity_days_mapping_sc_id
+            tableName: entity_days_mapping
+            concurrently: true
+            columns:
+              - column:
+                  name: sc_id
+      rollback:
+        - dropIndex:
+            indexName: idx_entity_days_mapping_sc_id
+            tableName: entity_days_mapping
+
+  - changeSet:
+      id: add-index-entry-days-entry-details-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_entry_days_entry_details_id
+                tableName: entry_days
+      changes:
+        - createIndex:
+            indexName: idx_entry_days_entry_details_id
+            tableName: entry_days
+            concurrently: true
+            columns:
+              - column:
+                  name: entry_details_id
+      rollback:
+        - dropIndex:
+            indexName: idx_entry_days_entry_details_id
+            tableName: entry_days
+
+  - changeSet:
+      id: add-index-entry-details-entry-days-entry-details-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_eded_entry_details_id
+                tableName: entry_details_entry_days
+      changes:
+        - createIndex:
+            indexName: idx_eded_entry_details_id
+            tableName: entry_details_entry_days
+            concurrently: true
+            columns:
+              - column:
+                  name: entry_details_id
+      rollback:
+        - dropIndex:
+            indexName: idx_eded_entry_details_id
+            tableName: entry_details_entry_days
+
+  - changeSet:
+      id: add-index-entry-details-entry-days-entry-days-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_eded_entry_days_id
+                tableName: entry_details_entry_days
+      changes:
+        - createIndex:
+            indexName: idx_eded_entry_days_id
+            tableName: entry_details_entry_days
+            concurrently: true
+            columns:
+              - column:
+                  name: entry_days_id
+      rollback:
+        - dropIndex:
+            indexName: idx_eded_entry_days_id
+            tableName: entry_details_entry_days
+
+  - changeSet:
+      id: add-index-order-app-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_order_app_user_id
+                tableName: "order"
+      changes:
+        - createIndex:
+            indexName: idx_order_app_user_id
+            tableName: "order"
+            concurrently: true
+            columns:
+              - column:
+                  name: app_user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_order_app_user_id
+            tableName: "order"
+
+  - changeSet:
+      id: add-index-order-signal-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_order_signal_id
+                tableName: "order"
+      changes:
+        - createIndex:
+            indexName: idx_order_signal_id
+            tableName: "order"
+            concurrently: true
+            columns:
+              - column:
+                  name: signal_id
+      rollback:
+        - dropIndex:
+            indexName: idx_order_signal_id
+            tableName: "order"
+
+  - changeSet:
+      id: add-index-order-strategy-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_order_strategy_id
+                tableName: "order"
+      changes:
+        - createIndex:
+            indexName: idx_order_strategy_id
+            tableName: "order"
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+      rollback:
+        - dropIndex:
+            indexName: idx_order_strategy_id
+            tableName: "order"
+
+  - changeSet:
+      id: add-index-order-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_order_user_id
+                tableName: "order"
+      changes:
+        - createIndex:
+            indexName: idx_order_user_id
+            tableName: "order"
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_order_user_id
+            tableName: "order"
+
+  - changeSet:
+      id: add-index-position-app-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_position_app_user_id
+                tableName: position
+      changes:
+        - createIndex:
+            indexName: idx_position_app_user_id
+            tableName: position
+            concurrently: true
+            columns:
+              - column:
+                  name: app_user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_position_app_user_id
+            tableName: position
+
+  - changeSet:
+      id: add-index-position-strategy-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_position_strategy_id
+                tableName: position
+      changes:
+        - createIndex:
+            indexName: idx_position_strategy_id
+            tableName: position
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+      rollback:
+        - dropIndex:
+            indexName: idx_position_strategy_id
+            tableName: position
+
+  - changeSet:
+      id: add-index-position-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_position_user_id
+                tableName: position
+      changes:
+        - createIndex:
+            indexName: idx_position_user_id
+            tableName: position
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_position_user_id
+            tableName: position
+
+  - changeSet:
+      id: add-index-signal-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_signal_user_id
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: idx_signal_user_id
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_signal_user_id
+            tableName: signal
+
+  - changeSet:
+      id: add-index-strategy-admin-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_admin_id
+                tableName: strategy
+      changes:
+        - createIndex:
+            indexName: idx_strategy_admin_id
+            tableName: strategy
+            concurrently: true
+            columns:
+              - column:
+                  name: admin_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_admin_id
+            tableName: strategy
+
+  - changeSet:
+      id: add-index-strategy-sc-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_sc_id
+                tableName: strategy
+      changes:
+        - createIndex:
+            indexName: idx_strategy_sc_id
+            tableName: strategy
+            concurrently: true
+            columns:
+              - column:
+                  name: sc_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_sc_id
+            tableName: strategy
+
+  - changeSet:
+      id: add-index-strategy-underlying-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_underlying_id
+                tableName: strategy
+      changes:
+        - createIndex:
+            indexName: idx_strategy_underlying_id
+            tableName: strategy
+            concurrently: true
+            columns:
+              - column:
+                  name: underlying_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_underlying_id
+            tableName: strategy
+
+  - changeSet:
+      id: add-index-strategy-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_user_id
+                tableName: strategy
+      changes:
+        - createIndex:
+            indexName: idx_strategy_user_id
+            tableName: strategy
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_user_id
+            tableName: strategy
+
+  - changeSet:
+      id: add-index-strategy-leg-strategy-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_leg_strategy_id
+                tableName: strategy_leg
+      changes:
+        - createIndex:
+            indexName: idx_strategy_leg_strategy_id
+            tableName: strategy_leg
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_leg_strategy_id
+            tableName: strategy_leg
+
+  - changeSet:
+      id: add-index-strategy-leg-signal-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_leg_signal_id
+                tableName: strategy_leg
+      changes:
+        - createIndex:
+            indexName: idx_strategy_leg_signal_id
+            tableName: strategy_leg
+            concurrently: true
+            columns:
+              - column:
+                  name: signal_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_leg_signal_id
+            tableName: strategy_leg
+
+  - changeSet:
+      id: add-index-strategy-leg-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_leg_user_id
+                tableName: strategy_leg
+      changes:
+        - createIndex:
+            indexName: idx_strategy_leg_user_id
+            tableName: strategy_leg
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_leg_user_id
+            tableName: strategy_leg
+
+  - changeSet:
+      id: add-index-strategy-leg-admin-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_leg_admin_id
+                tableName: strategy_leg
+      changes:
+        - createIndex:
+            indexName: idx_strategy_leg_admin_id
+            tableName: strategy_leg
+            concurrently: true
+            columns:
+              - column:
+                  name: admin_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_leg_admin_id
+            tableName: strategy_leg
+
+  - changeSet:
+      id: add-index-user-auth-constants-user-id
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_user_auth_constants_user_id
+                tableName: user_auth_constants
+      changes:
+        - createIndex:
+            indexName: idx_user_auth_constants_user_id
+            tableName: user_auth_constants
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_user_auth_constants_user_id
+            tableName: user_auth_constants
+
+  - changeSet:
+      id: add-index-signal-strategy-status-created
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_signal_strategy_status_created
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: idx_signal_strategy_status_created
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+              - column:
+                  name: status
+              - column:
+                  name: created_at
+      rollback:
+        - dropIndex:
+            indexName: idx_signal_strategy_status_created
+            tableName: signal
+
+  - changeSet:
+      id: add-index-strategy-status-user
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_status_user
+                tableName: strategy
+      changes:
+        - createIndex:
+            indexName: idx_strategy_status_user
+            tableName: strategy
+            concurrently: true
+            columns:
+              - column:
+                  name: status
+              - column:
+                  name: user_id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_status_user
+            tableName: strategy
+
+  - changeSet:
+      id: add-index-strategy-leg-signal-status
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_leg_signal_status
+                tableName: strategy_leg
+      changes:
+        - createIndex:
+            indexName: idx_strategy_leg_signal_status
+            tableName: strategy_leg
+            concurrently: true
+            columns:
+              - column:
+                  name: signal_id
+              - column:
+                  name: status
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_leg_signal_status
+            tableName: strategy_leg
+
+  - changeSet:
+      id: add-index-order-signal-status-created
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_order_signal_status_created
+                tableName: "order"
+      changes:
+        - createIndex:
+            indexName: idx_order_signal_status_created
+            tableName: "order"
+            concurrently: true
+            columns:
+              - column:
+                  name: signal_id
+              - column:
+                  name: status
+              - column:
+                  name: created_at
+      rollback:
+        - dropIndex:
+            indexName: idx_order_signal_status_created
+            tableName: "order"
+
+  - changeSet:
+      id: add-index-exit-details-strategy-time
+      author: automated
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_exit_details_strategy_time
+                tableName: exit_details
+      changes:
+        - createIndex:
+            indexName: idx_exit_details_strategy_time
+            tableName: exit_details
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+              - column:
+                  name: exit_hour_time
+              - column:
+                  name: exit_mins_time
+      rollback:
+        - dropIndex:
+            indexName: idx_exit_details_strategy_time
+            tableName: exit_details

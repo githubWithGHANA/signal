@@ -1,0 +1,113 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: imran
+      changes:
+        - createTable:
+            tableName: app_user
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_app_user
+              - column:
+                  name: user_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: token_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: user_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_account_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: user_role
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tenent_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: admin_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: investment
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: current_value
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: today_profit_loss
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: overall_profit_loss
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: app_user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: app_user_seq
+            incrementBy: 1
+            startValue: 1000
+
+        - addUniqueConstraint:
+            columnNames: user_id
+            constraintName: uc_app_user_user
+            tableName: app_user

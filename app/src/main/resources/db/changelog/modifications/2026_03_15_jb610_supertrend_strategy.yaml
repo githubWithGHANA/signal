@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: jb610SupertrendYamlInserts/jb610_supertrend_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: jb610SupertrendYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: jb610SupertrendYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: phoenixStrategyYamlInserts/phoenix_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: phoenixStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: phoenixStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

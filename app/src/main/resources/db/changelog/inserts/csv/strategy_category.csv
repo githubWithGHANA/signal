@@ -1,0 +1,5 @@
+id;name;desc;status;created_by;created_at;updated_by;updated_at;delete_indicator
+1;DIY;Focuses on self-managed trade execution with minimal external inputs;Active;Vivek;2024-07-01T10:00:00Z;Girish;2024-07-05T12:00:00Z;N
+2;IN-HOUSE;Highlights a tailored, in-house method for tracking and acting on market trends;Stand by;Karthikeyan;2024-06-20T09:30:00Z;Amarnath;2024-06-25T15:45:00Z;Y
+3;PER-BUILD;Refers to prebuilt strategic templates designed for balancing risks and rewards in trading;Blocked;Govind;2024-05-25T08:15:00Z;Hemant;2024-06-01T14:00:00Z;N
+4;POPULAR;Refers to popular strategic templates available in the market;Blocked;Govind;2024-05-25T08:15:00Z;Hemant;2024-06-01T14:00:00Z;N

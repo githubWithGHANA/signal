@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: jodiStrategyV2YamlInserts/jodi_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: jodiStrategyV2YamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: jodiStrategyV2YamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

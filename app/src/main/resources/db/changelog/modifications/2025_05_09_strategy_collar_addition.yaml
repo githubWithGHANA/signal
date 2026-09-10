@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+        file: yamlInserts/strategy.yaml
+        relativeToChangelogFile: true
+  - include:
+      file: yamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: yamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

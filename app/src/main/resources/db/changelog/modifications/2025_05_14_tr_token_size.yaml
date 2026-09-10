@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20240514-01-change-tr_token-size
+      author: bhargava_g
+      changes:
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: tr_token
+            newDataType: VARCHAR(666)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: user_session_id
+            newDataType: VARCHAR(666)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: jsession_id
+            newDataType: VARCHAR(666)
+

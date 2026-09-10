@@ -1,0 +1,2 @@
+id;strategy_id;profit_mtm_unit_type;profit_mtm_unit_value;stoploss_mtm_unit_value;exit_on_expiry_flag;exit_after_entry_days;exit-time;exit_hour_time;exit_mins_time;exit_sec_time;target_unit_toggle;target_unit_type;target_unit_value;stop_loss_unit_type;stop_loss_unit_toggle;stop_loss_unit_value;status;created_by;created_at;updated_by;updated_at;delete_indicator
+66;66;Absolute;3000;5000;Yes;0;2026-03-15T15:14:00;15;14;0;true;Absolute;3000;Absolute;true;5000;Stand by;QuantLab;2026-03-15T10:00:00Z;QuantLab;2026-03-15T10:00:00Z;N

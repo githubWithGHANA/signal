@@ -1,0 +1,161 @@
+databaseChangeLog:
+  - changeSet:
+      id: 22
+      author: imran
+      changes:
+        - createTable:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_user_auth_constants
+              - column:
+                  name: client_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: token
+                  type: VARCHAR(255)
+              - column:
+                  name: otp_session_id
+                  type: VARCHAR(255)
+              - column:
+                  name: app_id
+                  type: VARCHAR(255)
+              - column:
+                  name: app_key
+                  type: VARCHAR(255)
+              - column:
+                  name: email_id
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: xts_client
+                  type: BOOLEAN
+              - column:
+                  name: mobile_number
+                  type: VARCHAR(255)
+              - column:
+                  name: xts_app_key
+                  type: VARCHAR(1200)
+              - column:
+                  name: xts_secret_key
+                  type: VARCHAR(1200)
+              - column:
+                  name: previous_login_time
+                  type: DATETIME
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: min_profit
+                  type: BIGINT
+              - column:
+                  name: max_loss
+                  type: BIGINT
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: user_auth_constants_seq
+            incrementBy: 1
+            startValue: 1000
+
+        - addUniqueConstraint:
+            columnNames: client_id
+            constraintName: uc_user_auth_constants_client
+            tableName: user_auth_constants
+
+  - changeSet:
+      id: 23
+      author: uday
+      changes:
+        - addColumn:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: user_token_type
+                  type: VARCHAR(255)
+  - changeSet:
+      id: 24
+      author: uday
+      changes:
+        - addColumn:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: user_trading_mode
+                  type: VARCHAR(255)
+              - column:
+                  name: last_welcome_ack_time
+                  type: DATETIME
+  - changeSet:
+      id: 25
+      author: uday
+      changes:
+        - addColumn:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: is_cug_user
+                  type: BOOLEAN
+              - column:
+                  name: tr_token
+                  type: VARCHAR(255)
+              - column:
+                  name: user_session_id
+                  type: VARCHAR(255)
+              - column:
+                  name: jsession_id
+                  type: VARCHAR(255)
+  - changeSet:
+      id: 26
+      author: uday
+      changes:
+        - addColumn:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: product_alias
+                  type: VARCHAR(255)
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20
+      author: imran
+      changes:
+        - insert:
+            tableName: userrole
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: role_name
+                  value: 'admin'
+              - column:
+                  name: role_desc
+                  value: 'Administrator role'
+              - column:
+                  name: status
+                  value: 'active'
+              - column:
+                  name: created_by
+                  value: 'system'
+              - column:
+                  name: created_at
+                  valueDate: '2024-10-04T12:00:00'
+              - column:
+                  name: updated_by
+                  value: 'system'
+              - column:
+                  name: updated_at
+                  valueDate: '2024-10-04T12:00:00'
+              - column:
+                  name: delete_indicator
+                  value: 'N'
+
+        - insert:
+            tableName: userrole
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: role_name
+                  value: 'superadmin'
+              - column:
+                  name: role_desc
+                  value: 'Super Administrator role'
+              - column:
+                  name: status
+                  value: 'active'
+              - column:
+                  name: created_by
+                  value: 'system'
+              - column:
+                  name: created_at
+                  valueDate: '2024-10-04T12:00:00'
+              - column:
+                  name: updated_by
+                  value: 'system'
+              - column:
+                  name: updated_at
+                  valueDate: '2024-10-04T12:00:00'
+              - column:
+                  name: delete_indicator
+                  value: 'N'
+
+        - insert:
+            tableName: userrole
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: role_name
+                  value: 'user'
+              - column:
+                  name: role_desc
+                  value: 'User role'
+              - column:
+                  name: status
+                  value: 'active'
+              - column:
+                  name: created_by
+                  value: 'system'
+              - column:
+                  name: created_at
+                  valueDate: '2024-10-04T12:00:00'
+              - column:
+                  name: updated_by
+                  value: 'system'
+              - column:
+                  name: updated_at
+                  valueDate: '2024-10-04T12:00:00'
+              - column:
+                  name: delete_indicator
+                  value: 'N'

@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_09_18_add_column_premium_capital_exit_details
+      author: khan
+      changes:
+        - addColumn:
+            tableName: exit_details
+            columns:
+              - column:
+                  name: premium_capital
+                  type: BIGINT

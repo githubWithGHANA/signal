@@ -1,0 +1,44 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_REGION: ap-south-1
+    ECR_REPOSITORY: signal-app
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - echo "Installing dependencies..."
+
+  pre_build:
+    commands:
+      - echo "Logging in to Amazon ECR..."
+      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+      - ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - echo "ECR URI = $ECR_URI"
+
+  build:
+    commands:
+      - echo "Build started on $(date)"
+      - chmod +x gradlew
+      - ./gradlew app:bootJar --stacktrace
+      - echo "Building Docker image..."
+      - docker build -t $ECR_URI:$CODEBUILD_BUILD_NUMBER .
+      - docker tag $ECR_URI:$CODEBUILD_BUILD_NUMBER $ECR_URI:latest
+
+  post_build:
+    commands:
+      - echo "Pushing Docker image..."
+      - docker push $ECR_URI:$CODEBUILD_BUILD_NUMBER
+      - docker push $ECR_URI:latest
+      - echo "Build completed on $(date)"
+
+artifacts:
+  files:
+    - appspec.yml
+    - docker-compose.yml
+    - scripts/**/*
+    - init-scripts/**/*

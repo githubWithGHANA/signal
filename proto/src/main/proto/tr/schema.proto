@@ -1,0 +1,277 @@
+syntax = "proto3";
+option java_multiple_files = true;
+import "google/protobuf/wrappers.proto";
+
+package com.market.proto.tr;
+
+
+
+// Define the PlaceOrderResponse message
+message OrderResponse {
+
+  string orderNumber = 1;
+  string status = 2;
+  string orderCriteria = 3;
+  string customText = 4;
+  string orderUniqueIdentifier = 5;
+  string errorMessage = 6;
+
+}
+
+// Define the PlaceOrderRequest message
+message PlaceOrder {
+  string productAlias = 1;
+  string userId = 2;
+  string accountId = 3;
+  string tradingSymbol = 4;
+  string exchange = 5;
+  string transactionType = 6;
+  string retention = 7;
+  string priceType = 8;
+  int32 quantity = 9;
+  int32 disclosedQuantity = 10;
+  string marketProtection = 11;
+  double price = 12;
+  double triggerPrice = 13;
+  string productCode = 14;
+  string dateDays = 15;
+  string afterMarketOrder = 16;
+  string positionSquareOffFlag = 17;
+  int32 minimumQuantity = 18;
+  int32 brokerClient = 19;
+  string naicCode = 20;
+  string orderSource = 21;
+  string userTag = 22;
+  string exchangeAlgoId = 23;
+  string exchangeAlgoCategory = 24;
+  string remarks = 25;
+  string criteriaAttribute = 26;
+  string uniqueKey = 27;
+  string channel = 28;
+  string ipAddress = 29;
+  string userAgent = 30;
+  string appInstallId = 31;
+  string auctionNumber = 32;
+  string ctclId = 33;
+  int32 noLots = 34;
+  int32 lotSize = 35;
+  int32 multiply = 36;
+  string segment = 37;
+  string orderUniqueIdentifier = 38;
+  string tokenNo = 39;
+}
+
+// Define the PlaceOrderRequest message, now with a list of orders
+message PlaceOrderRequest {
+  string signalID = 1;
+  string tenantID = 2;
+  string trToken = 3;
+  google.protobuf.BoolValue cugUser = 4;
+  string userSessionID = 5;
+  string jSessionID = 6;
+  google.protobuf.BoolValue exitFlag = 7;
+  repeated PlaceOrder orders = 8;
+  string brokerName = 9;
+  string branchId = 10;
+  int32 requiredCapital = 11;
+}
+
+// Define the PlaceOrderResponse message
+message PlaceOrderResponse {
+  string status = 1;
+  repeated OrderResponse response = 2;
+  string signalID = 3;
+  string tenantID = 4;
+  repeated string errors = 5;
+
+}
+
+// --- PlaceOrderService  ---
+
+service PlaceOrderService {
+  // Endpoint to place an order
+  rpc PlaceOrder(PlaceOrderRequest) returns (PlaceOrderResponse);
+}
+
+
+
+// ---  Streaming Service for Order Book Response ---
+
+message OrderStatusFeed {
+
+  string name = 1;
+  string orderStatus = 2;
+  string nestOrderNumber = 3;
+  int32 filledQuantity = 4;
+  int32 unfilledSize = 5;
+  string orderDuration = 6;
+  string reportType = 7;
+  string tokenOrSymbol = 8;
+  string exchangeOrderId = 9;
+  string requestId = 10;
+  double tradePrice = 11;
+  string orderGenerationType = 12;
+  string exchangeTimestamp = 13;
+  string symorderId = 14;
+  string tradeId = 15;
+  string validDate = 16;
+  string orderCriteria = 17;
+  string customText = 18;
+  string orderUserMessage = 19;
+  string guiOrderId = 20;
+  string orderInitialStatus = 21;
+  string transactionType = 22;
+  string accountId = 23;
+  string userId = 24;
+  int32 quantity = 25;
+  double price = 26;
+  string priceType = 27;
+  int32 unfilledQuantity = 28;
+  string token = 29;
+  string tradingSymbol = 30;
+  int32 disclosedQuantity = 31;
+  double triggerPrice = 32;
+  string productCode = 33;
+  string uniqueKey = 35;
+  string availableCash = 36;
+  string marginUsed = 37;
+  string orderMargin = 38;
+  string insufficientFund = 39;
+  string rejectedReasonMargin = 40;
+  string orderUniqueIdentifier = 41;
+  string messageCode = 42;
+  string e = 43;
+  string txt = 44;
+  string usecs = 45;
+  string ssboe = 46;
+
+}
+
+// Define the OrderBookStreamRequest message for requesting order book data
+message OrderStatusFeedStreamRequest {
+  string type = 1;  // Type of data to filter (e.g., "order book updates")
+  string symbol = 2; // Symbol for the instrument (optional, if filtering is needed)
+}
+
+// Define the OrderBookStreamService service for streaming order book data
+service OrderStatusFeedStreamService {
+  // Server-streaming RPC to stream order book data to the client
+  rpc StreamOrderStatusFeed (OrderStatusFeedStreamRequest) returns (stream OrderStatusFeed);
+}
+
+
+
+
+// ---  Streaming Service for Position Response ---
+
+// Define the PositionResponseStream message
+
+message PositionResponse {
+  string exchange = 1;
+  string tsym = 2;
+  string netqty = 3;
+  string netamt = 4;
+  string pcode = 5;
+  string mtoM = 6;
+  string bep = 7;
+  string ltp = 8;
+  string instname = 9;
+  string expdate = 10;
+  string opttype = 11;
+  string stikeprc = 12;
+  string buyavgprc = 13;
+  string sellavgprc = 14;
+  string bqty = 15;
+  string sqty = 16;
+  string fillbuyamt = 17;
+  string fillsellamt = 18;
+  string blQty = 19;
+  string token = 20;
+  string symbol = 21;
+  string exchangeseg = 22;
+  string fillbuyqty = 23;
+  string fillsellqty = 24;
+  string s_NetQtyPosConv = 25;
+  string posflag = 26;
+  string sSqrflg = 27;
+  string discQty = 28;
+  string priceNumerator = 29;
+  string generalNumerator = 30;
+  string priceDenomenator = 31;
+  string generalDenomenator = 32;
+  string companyname = 33;
+  string realisedprofitloss = 34;
+  string unrealisedprofitloss = 35;
+  string type = 36;
+  string uniqueKey = 37;
+  string overallMtoM = 38;
+  string multiplier = 39;
+  string instrumentName = 40;
+  string corporateAction = 41;
+  string prevClose = 42;
+  string nETCalculationFlag = 43;
+  string ovrlBAvgPrc = 44;
+  string ovrlSAvgPrc = 45;
+  string ovrlBVal = 46;
+  string ovrlSVal = 47;
+  string ovrlNtVal = 48;
+  string ovrlBEP = 49;
+  string ovrlRlzdMtoM = 50;
+  string ovrlUnRlzdMtoM = 51;
+  string netSellamt = 52;
+  string netbuyamt = 53;
+  string netbuyqty = 54;
+  string netsellqty = 55;
+  string CFBuyavgprc = 56;
+  string CFsellavgprc = 57;
+  string CFbuyqty = 58;
+  string CFsellqty = 59;
+  string FillbuyamtCF = 60;
+  string FillsellamtCF = 61;
+  string actid = 62;
+  string NetBuyavgprc = 63;
+  string NetSellavgprc = 64;
+  string CFActualBAP = 65;
+  string CFActualSAP = 66;
+}
+
+message PositionResponseStream {
+  repeated PositionResponse positions = 1;
+  string userId = 2;
+}
+
+// Define the PositionStreamRequest message for requesting position data from Service
+message PositionStreamRequest {
+  string type = 1;  // Type of data to filter (e.g., "position updates")
+}
+
+// Define the PositionService service for streaming position data
+service PositionService {
+  // Server-streaming RPC to stream position data to the client
+  rpc StreamPositionData (PositionStreamRequest) returns (stream PositionResponseStream);
+}
+
+message MarginCheckLogin {
+  string clientID = 1;
+  string trToken = 2;
+  string userSessionID = 3;
+  string jSessionID = 4;
+  string brokerName = 5;
+  string branchId = 6;
+  string accountId = 7;
+  google.protobuf.BoolValue  cugUser = 8;
+  string productAlias = 9;
+}
+
+message MarginCheckResponse {
+  string clientID = 1;
+  bool success = 2;
+  string description = 3;
+  string status = 4;
+}
+
+service MarginCheckService {
+  // When user logs in, check if the user has sufficient margin
+  rpc LoginMarginCheck (MarginCheckLogin) returns (MarginCheckResponse);
+}
+

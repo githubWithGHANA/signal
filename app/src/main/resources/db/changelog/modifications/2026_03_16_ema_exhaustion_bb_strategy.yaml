@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: emaExhaustionBbYamlInserts/ema_exhaustion_bb_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: emaExhaustionBbYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: emaExhaustionBbYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: yourname
+      changes:
+        - insert:
+            tableName: entry_details
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: entry_hour_time
+                  value: 10
+              - column:
+                  name: entry_mins_time
+                  value: 30
+              - column:
+                  name: entry_sec_time
+                  value: 45
+              - column:
+                  name: strategy_id
+                  value: 1  # Assuming strategy ID 1 exists in the strategy table
+              - column:
+                  name: entry_time
+                  valueDate: 2024-11-19T10:30:45Z
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: created_by
+                  value: admin
+              - column:
+                  name: created_at
+                  valueDate: 2024-11-19T10:00:00Z
+              - column:
+                  name: updated_by
+                  value: admin
+              - column:
+                  name: updated_at
+                  valueDate: 2024-11-19T10:00:00Z
+              - column:
+                  name: delete_indicator
+                  value: N

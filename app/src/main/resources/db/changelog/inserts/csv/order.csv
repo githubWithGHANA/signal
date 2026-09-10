@@ -1,0 +1,6 @@
+id;exchange_order_id;user_id;execution_type;status;deployed_on;quantity;price;exchange_instrument_id;exchange_segment;underlying;instrument_name;leg_exp_id;signal_id;strategy_id;created_by;created_at;updated_by;updated_at;delete_indicator;app_user_id
+1001;EX12345;1;Market;Pending;2025-01-25 00:00:00;100;500;1001;1;Nifty;Instrument A;1;1;1;system;2025-01-08 00:00:00;system;2025-01-08 00:00:00;N;1
+1002;EX12346;1;Limit;Completed;2025-01-25 12:30:00;150;600;1002;2;Bank Nifty;Instrument B;1;1;1;system;2025-01-08 00:00:00;system;2025-01-08 12:30:00;N;1
+1003;EX12347;1;StopLoss;Executed;2025-01-25 08:15:00;200;550;1003;1;Nifty;Instrument C;1;1;1;system;2025-01-08 00:00:00;system;2025-01-08 08:15:00;N;1
+1004;EX12348;1;Market;Pending;2025-01-25 13:00:00;50;450;1004;2;Bank Nifty;Instrument D;1;1;1;system;2025-01-08 00:00:00;system;2025-01-08 13:00:00;N;1
+1005;EX12349;1;Limit;Completed;2025-01-25 17:45:00;100;700;1005;1;Nifty;Instrument E;1;1;1;system;2025-01-08 00:00:00;system;2025-01-08 17:45:00;N;1

@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_08_28_add_tsl_fields_in_strategy_leg
+      author: uday
+      changes:
+        - addColumn:
+            tableName: strategy_leg
+            columns:
+              - column:
+                  name: tsl_anchor_price
+                  type: bigint
+                  constraints:
+                    nullable: true
+              - column:
+                  name: tsl_activated
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: true

@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 26
+      author: bhargava
+      changes:
+        - createTable:
+            tableName: entry_details_entry_days
+            columns:
+              - column:
+                  name: entry_details_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: entry_days_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: entry_details_entry_days
+            baseColumnNames: entry_details_id
+            referencedTableName: entry_details
+            referencedColumnNames: id
+            constraintName: fk_entry_details_entry_days_entry_details
+        - addForeignKeyConstraint:
+            baseTableName: entry_details_entry_days
+            baseColumnNames: entry_days_id
+            referencedTableName: entry_days
+            referencedColumnNames: id
+            constraintName: fk_entry_details_entry_days_entry_days

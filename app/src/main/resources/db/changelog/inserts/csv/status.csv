@@ -1,0 +1,7 @@
+id;name;created_by;created_at;updated_by;updated_at;delete_indicator
+1;Active;Deepthi;2024-07-15T09:00:00Z;Mahesh;2024-09-01T11:45:00Z;N
+2;Stand by;Vaishnavi;2024-06-10T10:30:00Z;Jayanth;2024-08-05T14:30:00Z;Y
+3;Blocked;Subhadra;2024-05-25T12:45:00Z;Nagendra;2024-09-05T09:50:00Z;N
+4;Live- Entered;Sanjeev;2024-04-05T08:20:00Z;Vishal;2024-07-30T13:10:00Z;N
+5;Exited;Murali;2024-03-18T15:50:00Z;Mallikarjuna;2024-08-25T16:40:00Z;Y
+6;Error Execution;Raghunandan;2024-02-22T09:15:00Z;Tarun;2024-09-01T08:30:00Z;N

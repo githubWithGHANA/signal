@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-unique-constraint-userid-name
+      author: bhargava_g
+      changes:
+        - addUniqueConstraint:
+            tableName: strategy
+            columnNames: user_id, name
+            constraintName: uc_strategy_userid_name

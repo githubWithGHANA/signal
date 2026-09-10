@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop_schema_cascade
+      author: bhargava
+      comment: drop schema if exists with cascade
+      preConditions:
+        - onFail: MARK_RAN
+        - schemaExists:
+            schemaName: signal
+      changes:
+        - dropSchema:
+            schemaName: signal
+            cascade: true
+
+  - changeSet:
+      id: create_schema
+      author: bhargava
+      comment: create schema if not exists
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - schemaExists:
+                schemaName: signal
+      changes:
+        - createSchema:
+            schemaName: signal
+
+  - changeSet:
+      id: drop_table
+      author: bhargava
+      comment: drop table if exists
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: signal_dev
+            schemaName: signal
+      changes:
+        - dropTable:
+            tableName: signal_dev
+            schemaName: signal
+
+  - changeSet:
+      id: create_table
+      author: bhargava
+      comment: create table if not exists
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: signal_dev
+                schemaName: signal
+      changes:
+        - createTable:
+            tableName: signal_dev
+            schemaName: signal
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP

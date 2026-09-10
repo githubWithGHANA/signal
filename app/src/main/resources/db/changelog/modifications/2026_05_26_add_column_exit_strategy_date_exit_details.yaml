@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_05_26_add_column_exit_strategy_date_exit_details
+      author: codex
+      changes:
+        - addColumn:
+            tableName: exit_details
+            columns:
+              - column:
+                  name: exit_strategy_date
+                  type: DATETIME

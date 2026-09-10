@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_08_16_add_column_executed_time_strategy_leg
+      author: khan
+      changes:
+        - addColumn:
+            tableName: strategy_leg
+            columns:
+              - column:
+                  name: executed_time
+                  type: DATETIME

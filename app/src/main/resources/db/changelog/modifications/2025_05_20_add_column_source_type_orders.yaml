@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-source-type-orders
+      author: bhargava_g
+      changes:
+        - addColumn:
+            tableName: order
+            columns:
+              - column:
+                  name: source_type
+                  type: VARCHAR(255)
+
+
+
+
+

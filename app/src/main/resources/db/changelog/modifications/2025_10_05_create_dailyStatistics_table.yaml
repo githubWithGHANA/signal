@@ -1,0 +1,124 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_10_05_create_dailyStatistics_table
+      author: imran
+      changes:
+        - createTable:
+            tableName: daily_statistics
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: user_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: strategy_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: date
+                  type: DATE
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: total_profit
+                  type: BIGINT
+
+              - column:
+                  name: total_roi
+                  type: BIGINT
+
+              - column:
+                  name: max_draw_down
+                  type: BIGINT
+
+              - column:
+                  name: max_draw_down_percent
+                  type: BIGINT
+
+              - column:
+                  name: win_rate
+                  type: BIGINT
+
+              - column:
+                  name: loss_rate
+                  type: BIGINT
+
+              - column:
+                  name: capital_required
+                  type: BIGINT
+
+              - column:
+                  name: total_trading_days
+                  type: BIGINT
+
+              - column:
+                  name: total_trades
+                  type: BIGINT
+
+              - column:
+                  name: avg_trades_per_day
+                  type: BIGINT
+
+              - column:
+                  name: avg_daily_profit
+                  type: BIGINT
+
+              - column:
+                  name: avg_profit_on_win_days
+                  type: BIGINT
+
+              - column:
+                  name: avg_loss_on_loss_days
+                  type: BIGINT
+
+              - column:
+                  name: stats_json
+                  type: TEXT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: last_updated
+                  type: TIMESTAMP
+
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(1)
+                  defaultValue: 'N'

@@ -1,0 +1,2 @@
+id;entry_hour_time;entry_mins_time;entry_sec_time;strategy_id;entry_time;status;created_by;created_at;updated_by;updated_at;delete_indicator
+68;9;20;0;68;2026-03-16T09:20:00;Stand by;QuantLab;2026-03-16T10:00:00Z;QuantLab;2026-03-16T10:00:00Z;N

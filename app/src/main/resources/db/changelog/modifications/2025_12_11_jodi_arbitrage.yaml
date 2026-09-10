@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 55
+      author: imran
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: name
+                  value: "Jodi Arbitrage"
+              - column:
+                  name: description
+                  value: "The option selling strategy aims to capture temporary mispricings and select the side where premiums are inefficiently low"
+              - column:
+                  name: expiry
+                  value: "CurrentWeek"
+              - column:
+                  name: min_capital
+                  valueNumeric: 350000000
+            where: "id = 41"

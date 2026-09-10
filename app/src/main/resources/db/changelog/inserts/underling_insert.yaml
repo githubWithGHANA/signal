@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-underlying-data
+      author: your_name
+      changes:
+        - insert:
+            tableName: underlying
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: u_name
+                  value: "NIFTY"
+              - column:
+                  name: u_id
+                  value: "U12345"
+              - column:
+                  name: status
+                  value: "ACTIVE"
+              - column:
+                  name: created_by
+                  value: "admin"
+              - column:
+                  name: created_at
+                  valueDate: "2024-10-04T08:00:00"
+              - column:
+                  name: updated_by
+                  value: "admin"
+              - column:
+                  name: updated_at
+                  valueDate: "2024-01-01T00:00:00"
+              - column:
+                  name: delete_indicator
+                  value: "N"

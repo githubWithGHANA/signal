@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: imran
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/user_auth_constants.csv
+            tableName: user_auth_constants
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: token
+                  type: VARCHAR(255)
+              - column:
+                  name: otp_session_id
+                  type: VARCHAR(255)
+              - column:
+                  name: app_id
+                  type: VARCHAR(255)
+              - column:
+                  name: app_key
+                  type: VARCHAR(255)
+              - column:
+                  name: mobile_number
+                  type: VARCHAR(15)
+              - column:
+                  name: previous_login_time
+                  type: TIMESTAMP
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: xts_token
+                  type: VARCHAR(255)

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexDeltaNeutralHedgeStrategyYamlInserts/sensex_dnh_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexDeltaNeutralHedgeStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexDeltaNeutralHedgeStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

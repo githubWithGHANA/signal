@@ -1,0 +1,322 @@
+databaseChangeLog:
+  - changeSet:
+      id: 19.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: app_user_log_info
+            constraintName: FK_APP_USER_LOG_INFO_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 2.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: app_user
+            constraintName: FK_APP_USER_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 2.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_role
+            baseTableName: app_user
+            constraintName: FK_APP_USER_ON_USER_ROLE
+            referencedColumnNames: id
+            referencedTableName: userrole
+  - changeSet:
+      id: 23.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: deployment_errors
+            constraintName: FK_DEPLOYMENT_ERRORS_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 23.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_leg_id
+            baseTableName: deployment_errors
+            constraintName: FK_DEPLOYMENT_ERRORS_ON_STRATEGY_LEG
+            referencedColumnNames: id
+            referencedTableName: strategy_leg
+  - changeSet:
+      id: 23.3
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: deployment_errors
+            constraintName: FK_DEPLOYMENT_ERRORS_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 3.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: entity_days_mapping
+            constraintName: FK_ENTITY_DAYS_MAPPING_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 4.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: days
+            baseTableName: entry_days
+            constraintName: FK_ENTRY_DAYS_ON_DAYS
+            referencedColumnNames: id
+            referencedTableName: entry_details
+  - changeSet:
+      id: 5.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: entry_details
+            constraintName: FK_ENTRY_DETAILS_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 6.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: exit_details
+            constraintName: FK_EXIT_DETAILS_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: app_user_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_APP_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 1.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: signal_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_SIGNAL
+            referencedColumnNames: id
+            referencedTableName: signal
+  - changeSet:
+      id: 1.3
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 1.4
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: order
+            constraintName: FK_ORDER_ON_USER
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 9.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: app_user_id
+            baseTableName: position
+            constraintName: FK_POSITION_ON_APP_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 9.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: position
+            constraintName: FK_POSITION_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 9.3
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: position
+            constraintName: FK_POSITION_ON_USER
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 10.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: signal
+            constraintName: FK_SIGNAL_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 10.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_addition_id
+            baseTableName: signal
+            constraintName: FK_SIGNAL_ON_STRATEGY_ADDITION
+            referencedColumnNames: id
+            referencedTableName: signal_additions
+  - changeSet:
+      id: 10.3
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: signal
+            constraintName: FK_SIGNAL_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 21.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: strategy_addition
+            constraintName: FK_STRATEGY_ADDITION_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 11.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 11.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: signal_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_SIGNAL
+            referencedColumnNames: id
+            referencedTableName: signal
+  - changeSet:
+      id: 11.3
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: strategy_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_STRATEGY
+            referencedColumnNames: id
+            referencedTableName: strategy
+  - changeSet:
+      id: 11.4
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: strategy_leg
+            constraintName: FK_STRATEGY_LEG_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 13.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: addition_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_ADDITION
+            referencedColumnNames: id
+            referencedTableName: strategy_addition
+  - changeSet:
+      id: 13.2
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 13.3
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: sc_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_SC
+            referencedColumnNames: id
+            referencedTableName: strategy_category
+  - changeSet:
+      id: 13.4
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: underlying_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_UNDERLYING
+            referencedColumnNames: id
+            referencedTableName: underlying
+  - changeSet:
+      id: 13.5
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: strategy
+            constraintName: FK_STRATEGY_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+  - changeSet:
+      id: 17.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: admin_id
+            baseTableName: user_admin
+            constraintName: FK_USER_ADMIN_ON_ADMIN
+            referencedColumnNames: id
+            referencedTableName: user_admin
+  - changeSet:
+      id: 22.1
+      author: imran
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: user_auth_constants
+            constraintName: FK_USER_AUTH_CONSTANTS_ON_USER
+            referencedColumnNames: id
+            referencedTableName: app_user
+

@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: 123
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/strategy_category.csv
+            tableName: strategy_category
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: s_name
+                  type: string
+              - column:
+                  name: s_desc
+                  type: string
+              - column:
+                  name: s_category
+                  type: string
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string
+  - changeSet:
+      id: 38
+      author: imran
+      changes:
+        - update:
+            tableName: strategy_category
+            columns:
+              - column:
+                  name: name
+                  value: Pre-Build
+            where: id = 3
+  - changeSet:
+      id: 35
+      author: imran
+      changes:
+        - update:
+            tableName: strategy_category
+            columns:
+              - column:
+                  name: name
+                  value: Popular
+            where: id = 4
+  - changeSet:
+      id: 36
+      author: imran
+      changes:
+        - update:
+            tableName: strategy_category
+            columns:
+              - column:
+                  name: name
+                  value: In-House
+            where: id = 2

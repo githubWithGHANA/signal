@@ -1,0 +1,6 @@
+id;client_id;token;otp_session_id;app_id;app_key;email_id;name;address;xts_client;mobile_number;previous_login_time;user_id;created_by;created_at;updated_by;updated_at;delete_indicator;xts_token
+1;1009;hjfbhbfhbherhvhrgvhrvhjrhjvhb;bdhfnvhvfhjjhhverhgehjr;app123;key123;RajeshSrivastava@gmail.com;RajeshSrivastava;hyderabad;true;9876543210;2025-01-01 12:00:00;1;ramesh;2025-01-01 12:00:00;ramesh;2025-01-01 12:00:00;N;""""""
+2;1001;hjfbhbfhbherhvhrgvhrvhjrhjvhc;bdhfnvhvfhjjhhverhgehjs;app124;key124;RajeshSrivastava1@gmail.com;RajeshSrivastava1;mumbai;false;9876543211;2025-01-01 12:10:00;2;suresh;2025-01-01 12:10:00;suresh;2025-01-01 12:10:00;N;""""""
+3;1002;hjfbhbfhbherhvhrgvhrvhjrhjvhd;bdhfnvhvfhjjhhverhgehjt;app125;key125;RajeshSrivastava2@gmail.com;RajeshSrivastava2;chennai;true;9876543212;2025-01-01 12:20:00;3;leon;2025-01-01 12:20:00;leon;2025-01-01 12:20:00;N;""""""
+4;1003;hjfbhbfhbherhvhrgvhrvhjrhjvhe;bdhfnvhvfhjjhhverhgehju;app126;key126;RajeshSrivastava3@gmail.com;RajeshSrivastava3;delhi;false;9876543213;2025-01-01 12:30:00;4;brock;2025-01-01 12:30:00;brock;2025-01-01 12:30:00;N;""""""
+5;1004;hjfbhbfhbherhvhrgvhrvhjrhjvhf;bdhfnvhvfhjjhhverhgehjv;app127;key127;RajeshSrivastava4@gmail.com;RajeshSrivastava4;kolkata;true;9876543214;2025-01-01 12:40:00;5;misty;2025-01-01 12:40:00;misty;2025-01-01 12:40:00;N;""""""

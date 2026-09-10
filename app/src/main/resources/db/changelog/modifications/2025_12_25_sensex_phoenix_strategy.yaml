@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexPhoenixStrategyYamlInserts/phoenix_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexPhoenixStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexPhoenixStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

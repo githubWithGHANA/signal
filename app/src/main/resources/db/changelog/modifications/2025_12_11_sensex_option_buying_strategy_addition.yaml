@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexOptionBuyingStrategyYamlInserts/sensex_option_buying_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexOptionBuyingStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexOptionBuyingStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

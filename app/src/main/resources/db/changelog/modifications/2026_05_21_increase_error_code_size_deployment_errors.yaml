@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_05_21_increase_error_code_size_deployment_errors
+      author: mahir
+      changes:
+        - modifyDataType:
+            tableName: deployment_errors
+            columnName: error_code
+            newDataType: TEXT

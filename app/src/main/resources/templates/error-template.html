@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    .email-header {
+      background-color: #FF474D; /* Deep red for critical error */
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .email-body {
+      padding: 20px;
+    }
+    .email-body p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #333333;
+    }
+    .email-body .highlight {
+      background-color: #fff0f0; /* Light red background */
+      padding: 10px;
+      border-left: 4px solid #FF7074; /* Matching deep red border */
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .email-footer {
+      background-color: #f9f9f9;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #666666;
+    }
+  </style>
+</head>
+<body>
+<div class="email-container">
+  <div class="email-header"> {{EMAIL_TITLE}}</div>
+  <div class="email-body">
+    <p><strong>Date:</strong> [dd/mm/yy]</p>
+    <p><strong>Time:</strong> [HH:MM AM/PM]</p>
+
+    <div class="highlight">
+      <p><strong>Error Details:</strong></p>
+      <p><strong>Status:</strong> {{Status}}</p>
+      <p><strong>Message:</strong> {{errorDetails}}</p>
+    </div>
+
+    <p><strong>Next Step:</strong></p>
+    <p> {{NEXT_STEP}}</p>
+  </div>
+  <div class="email-footer">
+    Best regards,<br />
+     {{CLIENT_NAME}}
+  </div>
+</div>
+</body>
+</html>

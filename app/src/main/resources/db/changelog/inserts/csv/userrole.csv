@@ -1,0 +1,5 @@
+id;role_name;role_desc;status;created_by;created_at;updated_by;updated_at;delete_indicator
+1;SuperAdmin;Full system access;Active;superadmin;2023-01-15T08:00:00Z;superadmin;2024-01-15T08:00:00Z;N
+2;Admin;Responsible for managing reports;Stand by;admin;2023-03-12T10:15:00Z;admin;2024-02-01T12:00:00Z;N
+3;SubAdmin;Can execute trades;Blocked;subadmin;2022-11-05T09:30:00Z;subadmin;2023-09-08T14:45:00Z;N
+

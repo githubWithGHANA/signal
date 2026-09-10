@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 40
+      author: imran
+      changes:
+        - addColumn:
+            tableName: signal_additions
+            columns:
+              - column:
+                  name: current_atm
+                  type: INT
+
+  - changeSet:
+      id: 2025_12_08_add_signal_addition
+      author: imran
+      changes:
+        - addColumn:
+            tableName: signal_additions
+            columns:
+              - column:
+                  name: jodi_entry_strike
+                  type: INTEGER
+              - column:
+                  name: jodi_entry_premium
+                  type: FLOAT
+              - column:
+                  name: jodi_entry_expiry
+                  type: VARCHAR(255)

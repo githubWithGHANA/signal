@@ -1,0 +1,6 @@
+id;day;created_by;created_at;updated_by;updated_at;delete_indicator
+1;Monday;Mallikarjuna;2024-05-10T10:30:00Z;Mahesh;2024-10-01T12:15:00Z;N
+2;Tuesday;Srikanth;2023-11-15T09:20:00Z;Harsha;2024-09-28T11:45:30Z;Y
+3;Wednesday;Mohan Krishna;2024-02-21T14:15:00Z;Srinivas;2024-10-02T08:50:40Z;N
+4;Thursday;Yashwanth;2023-12-30T11:05:22Z;Harsha;2024-10-03T09:15:20Z;N
+5;Friday;Devaraj;2024-01-05T13:30:10Z;Karthik;2024-10-04T10:30:15Z;N

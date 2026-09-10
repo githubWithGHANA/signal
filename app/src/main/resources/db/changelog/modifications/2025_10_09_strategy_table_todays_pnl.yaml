@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_10_09_strategy_table_todays_pnl
+      author: mahir
+      changes:
+        - addColumn:
+            tableName: strategy
+            columns:
+              - column:
+                  name: todays_pnl
+                  type: BIGINT
+

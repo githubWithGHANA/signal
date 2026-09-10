@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_07_29_add_strategy_addition_fields
+      author: uday
+      changes:
+        - addColumn:
+            tableName: strategy_addition
+            columns:
+              - column:
+                  name: waiting_for_next_crossover
+                  type: BOOLEAN
+                  defaultValueBoolean: true
+              - column:
+                  name: last_traded_crossover_candle_timestamp
+                  type: BIGINT
+  - changeSet:
+      id: 2025_08_19_add_strategy_addition_exit_field
+      author: uday
+      changes:
+        - addColumn:
+            tableName: strategy_addition
+            columns:
+              - column:
+                  name: last_exit_candle_timestamp
+                  type: BIGINT
+
+  - changeSet:
+      id: 2025_10_28_add_strategy_addition_acc_fields
+      author: uday
+      changes:
+        - addColumn:
+            tableName: strategy_addition
+            columns:
+              - column:
+                  name: last_accumulation_1h_bar_time
+                  type: BIGINT
+              - column:
+                  name: last_accumulation_15m_bar_time
+                  type: BIGINT
+              - column:
+                  name: last_accumulation_5m_bar_time
+                  type: BIGINT
+
+
+

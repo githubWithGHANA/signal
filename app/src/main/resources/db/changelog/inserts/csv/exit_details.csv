@@ -1,0 +1,26 @@
+id;strategy_id;profit_mtm_unit_type;profit_mtm_unit_value;stoploss_mtm_unit_value;exit_on_expiry_flag;exit_after_entry_days;exit-time;exit_hour_time;exit_mins_time;exit_sec_time;target_unit_toggle;target_unit_type;target_unit_value;stop_loss_unit_type;stop_loss_unit_toggle;stop_loss_unit_value;status;created_by;created_at;updated_by;updated_at;delete_indicator
+1;1;Amount;500;200;Yes;3;2024-10-09T10:15:00;14;55;25;true;PercentOfCapital;50;PercentOfCapital;true;50;active;Alice Johnson;2024-08-01T09:30:00Z;Bob Smith;2024-10-01T11:00:00Z;N
+2;2;PercentOfCapital;10;5;No;5;2024-10-09T11:25:45;14;55;50;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;John Doe;2024-06-10T14:00:00Z;Alice Johnson;2024-09-30T15:45:00Z;Y
+3;3;Amount;1000;300;Yes;4;2024-10-09T09:45:30;14;55;30;true;PercentOfCapital;50;PercentOfCapital;true;50;Blocked;David Brown;2024-07-20T16:00:00Z;John Doe;2024-10-02T08:45:00Z;N
+4;4;PercentOfCapital;15;10;No;2;2024-10-09T10:25:00;14;55;40;true;PercentOfCapital;50;PercentOfCapital;true;50;Live-Entered;Emily Clark;2024-04-12T10:00:00Z;David Brown;2024-10-03T09:20:00Z;N
+5;5;Amount;750;250;Yes;5;2024-10-09T11:10:15;14;55;45;true;PercentOfCapital;50;PercentOfCapital;true;50;Exited;Michael Wilson;2024-05-15T13:30:00Z;Emily Clark;2024-10-04T10:30:00Z;N
+6;6;PercentOfCapital;25;15;No;1;2024-10-09T12:30:25;14;55;35;true;PercentOfCapital;50;PercentOfCapital;true;50;Error Execution;Sarah Davis;2024-01-18T08:45:00Z;Michael Wilson;2024-10-05T14:10:00Z;Y
+7;7;Amount;500;200;Yes;4;2024-10-09T09:20:45;14;55;20;true;PercentOfCapital;50;PercentOfCapital;true;50;Pending;Robert Harris;2024-03-25T11:45:00Z;Sarah Davis;2024-10-06T09:30:00Z;N
+8;8;PercentOfCapital;10;8;No;2;2024-10-09T10:45:30;14;55;15;true;PercentOfCapital;50;PercentOfCapital;true;50;active;Laura White;2024-02-14T09:15:00Z;Robert Harris;2024-10-07T11:20:00Z;N
+9;9;Amount;2000;400;Yes;5;2024-10-09T11:30:10;14;55;10;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;Chris Green;2024-05-18T10:30:00Z;Laura White;2024-10-08T14:40:00Z;Y
+10;10;PercentOfCapital;15;12;No;3;2024-10-09T12:50:50;14;55;5;true;PercentOfCapital;50;PercentOfCapital;true;50;Blocked;Megan Price;2024-04-10T16:00:00Z;Chris Green;2024-10-01T15:00:00Z;N
+11;11;Amount;600;250;Yes;4;2024-10-09T13:10:40;14;55;50;true;PercentOfCapital;50;PercentOfCapital;true;50;Exited;Brian Adams;2024-08-15T13:20:00Z;Megan Price;2024-10-02T11:25:00Z;N
+12;12;PercentOfCapital;20;18;No;1;2024-10-09T14:20:10;14;55;45;true;PercentOfCapital;50;PercentOfCapital;true;50;Error Execution;Sophia Lee;2024-07-10T10:45:00Z;Brian Adams;2024-10-03T08:50:00Z;Y
+13;13;Amount;500;200;Yes;5;2024-10-09T09:35:25;14;55;30;true;PercentOfCapital;50;PercentOfCapital;true;50;active;Paul Scott;2024-03-01T08:30:00Z;Sophia Lee;2024-10-04T10:05:00Z;N
+14;14;PercentOfCapital;10;15;No;3;2024-10-09T10:50:15;14;55;25;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;Victoria Moore;2024-06-25T12:40:00Z;Paul Scott;2024-10-05T14:30:00Z;N
+15;15;Amount;750;300;Yes;4;2024-10-09T11:40:00;14;55;20;true;PercentOfCapital;50;PercentOfCapital;true;50;Blocked;James Evans;2024-02-12T15:20:00Z;Victoria Moore;2024-10-06T13:40:00Z;Y
+16;16;PercentOfCapital;30;10;No;2;2024-10-09T12:15:35;14;55;15;true;PercentOfCapital;50;PercentOfCapital;true;50;Live-Entered;Diana Perez;2024-09-10T11:10:00Z;James Evans;2024-10-07T09:15:00Z;N
+17;17;Amount;800;200;Yes;5;2024-10-09T13:45:25;14;55;10;true;PercentOfCapital;50;PercentOfCapital;true;50;Exited;Jason Turner;2024-01-25T10:50:00Z;Diana Perez;2024-10-08T10:25:00Z;N
+18;18;PercentOfCapital;25;18;No;1;2024-10-09T14:35:50;14;55;5;true;PercentOfCapital;50;PercentOfCapital;true;50;Error Execution;Nancy Young;2024-05-30T08:15:00Z;Jason Turner;2024-10-09T11:40:00Z;Y
+19;19;Amount;600;250;Yes;4;2024-10-09T09:10:40;14;55;50;true;PercentOfCapital;50;PercentOfCapital;true;50;Pending;Mark King;2024-08-20T14:25:00Z;Nancy Young;2024-10-10T14:00:00Z;N
+20;20;PercentOfCapital;10;5;No;3;2024-10-09T10:25:20;14;55;45;true;PercentOfCapital;50;PercentOfCapital;true;50;active;Angela Hall;2024-03-15T13:00:00Z;Mark King;2024-10-11T15:30:00Z;N
+21;21;Amount;1000;500;Yes;2;2024-10-09T11:35:50;14;55;40;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;William Nelson;2024-04-05T12:15:00Z;Angela Hall;2024-10-12T09:45:00Z;Y
+22;22;Amount;1000;500;Yes;2;2024-10-09T11:35:50;14;55;40;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;William Nelson;2024-04-05T12:15:00Z;Angela Hall;2024-10-12T09:45:00Z;Y
+23;23;PercentOfCapital;10;15;No;3;2024-10-09T10:50:15;14;55;25;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;Victoria Moore;2024-06-25T12:40:00Z;Paul Scott;2024-10-05T14:30:00Z;N
+24;24;Amount;1000;500;Yes;2;2024-10-06T11:35:50;14;55;40;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;William;2024-04-05T12:15:00Z;Angela;2024-10-10T09:45:00Z;Y
+25;25;PercentOfCapital;10;15;No;3;2024-10-05T10:50:15;14;55;25;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;Victoria;2024-06-25T12:40:00Z;Paul;2024-10-07T14:30:00Z;N

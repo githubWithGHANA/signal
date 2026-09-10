@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20
+      author: imran
+      changes:
+        - createTable:
+            tableName: signal_additions
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_signal_additions
+              - column:
+                  name: entry_underling_price
+                  type: INT
+              - column:
+                  name: entry_delta
+                  type: INT
+              - column:
+                  name: entry_iv
+                  type: INT
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: signal_additions_seq
+            incrementBy: 1
+            startValue: 1000
+

@@ -1,0 +1,156 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-index-signal-user-pos-exec-date
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: 2025_10_27_add_index_signal_user_pos_exec
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: 2025_10_27_add_index_signal_user_pos_exec
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: position_type
+              - column:
+                  name: execution_type
+              - column:
+                  name: created_at
+      rollback:
+        - dropIndex:
+            indexName: 2025_10_27_add_index_signal_user_pos_exec
+            tableName: signal
+
+  - changeSet:
+      id: add-index-strategy-leg-user-instr-upd
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_leg_user_instr_upd
+                tableName: strategy_leg
+      changes:
+        - createIndex:
+            indexName: idx_strategy_leg_user_instr_upd
+            tableName: strategy_leg
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: exchange_instrument_id
+              - column:
+                  name: updated_at
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_leg_user_instr_upd
+            tableName: strategy_leg
+
+  - changeSet:
+      id: add-index-signal-strategy-id
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_signal_strategy_id
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: idx_signal_strategy_id
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+      rollback:
+        - dropIndex:
+            indexName: idx_signal_strategy_id
+            tableName: signal
+
+  - changeSet:
+      id: add-index-signal-user-status
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_signal_user_status
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: idx_signal_user_status
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: status
+      rollback:
+        - dropIndex:
+            indexName: idx_signal_user_status
+            tableName: signal
+
+  - changeSet:
+      id: add-index-signal-status-pos-created
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_signal_status_pos_created
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: idx_signal_status_pos_created
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: status
+              - column:
+                  name: position_type
+              - column:
+                  name: created_at
+      rollback:
+        - dropIndex:
+            indexName: idx_signal_status_pos_created
+            tableName: signal
+
+  - changeSet:
+      id: add-index-signal-strategy-status
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_signal_strategy_status
+                tableName: signal
+      changes:
+        - createIndex:
+            indexName: idx_signal_strategy_status
+            tableName: signal
+            concurrently: true
+            columns:
+              - column:
+                  name: strategy_id
+              - column:
+                  name: status
+      rollback:
+        - dropIndex:
+            indexName: idx_signal_strategy_status
+            tableName: signal

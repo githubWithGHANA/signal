@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - createSequence:
+            sequenceName: user_admins_seq
+            startValue: 1
+        - insert:
+            tableName: user_admin
+            columns:
+#              - column:
+#                    name: admin_id
+#                    value: 1
+              - column:
+                  name: id
+                  value: 1  # Ensure this matches the expected column name
+              - column:
+                  name: admin_name
+                  value: "admin_user"
+              - column:
+                  name: first_name
+                  value: "Admin"
+              - column:
+                  name: middle_name
+                  value: "Middle"
+              - column:
+                  name: last_name
+                  value: "User"
+              - column:
+                  name: role_name
+                  value: "Super Admin"
+              - column:
+                  name: admin_level
+                  value: "1"
+              - column:
+                  name: email
+                  value: "venkatamohanreddygopireddy@gmail.com"
+              - column:
+                  name: password
+                  value: "admin_password_hash"  # Ensure this is hashed
+              - column:
+                  name: phone_number
+                  value: "1234567890"
+              - column:
+                  name: otp
+                  value: "000"
+              - column:
+                  name: status
+                  value: "Active"
+              - column:
+                  name: created_by
+                  value: "system"
+              - column:
+                  name: created_at
+                  valueDate: "2024-10-05T00:00:00"
+              - column:
+                  name: updated_by
+                  value: "system"
+              - column:
+                  name: updated_at
+                  valueDate: "2024-10-05T00:00:00"
+              - column:
+                  name: delete_indicator
+                  value: "N"

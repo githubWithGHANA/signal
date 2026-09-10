@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your_name
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/strategy_additions.csv
+            tableName: strategy_additions
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: sc_id
+                  type: integer
+              - column:
+                  name: stratagy_id
+                  type: integer
+              - column:
+                  name: delta_slippage
+                  type: decimal

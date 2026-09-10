@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_10_22_strategy_table_total_pnl
+      author: mahir
+      changes:
+        - addColumn:
+            tableName: strategy
+            columns:
+              - column:
+                  name: total_pnl
+                  type: BIGINT
+

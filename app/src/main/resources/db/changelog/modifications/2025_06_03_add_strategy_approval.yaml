@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_06_03_add_strategy_approval
+      author: uday
+      changes:
+        - addColumn:
+            tableName: strategy
+            columns:
+              - column:
+                  name: approval_status
+                  type: VARCHAR(255)
+              - column:
+                  name: nff_id
+                  type: VARCHAR(255)
+              - column:
+                  name: remarks
+                  type: VARCHAR(255)

@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: bhargava
+      changes:
+        - createTable:
+            tableName: strategy
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: timestamp
+                  type: varchar(50)
+              - column:
+                  name: created_at
+                  type: varchar(50)
+              - column:
+                  name: strategy_tag
+                  type: varchar(50)
+              - column:
+                  name: title
+                  type: double
+              - column:
+                  name: description
+                  type: varchar(50)
+              - column:
+                  name: underlying
+                  type: varchar(50)
+              - column:
+                  name: exchange_symbol
+                  type: varchar(50)
+              - column:
+                  name: risk
+                  type: varchar(100)
+              - column:
+                  name: quantity
+                  type: varchar(100)
+

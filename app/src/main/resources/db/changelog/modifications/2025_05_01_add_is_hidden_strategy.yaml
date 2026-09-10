@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-is-hidden-to-items
+      author: yourname
+      changes:
+        - addColumn:
+            tableName: strategy
+            columns:
+              - column:
+                  name: is_hidden
+                  type: boolean
+                  defaultValueBoolean: false

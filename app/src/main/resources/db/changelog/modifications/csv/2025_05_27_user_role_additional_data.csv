@@ -1,0 +1,3 @@
+id;role_name;role_desc;status;created_by;created_at;updated_by;updated_at;delete_indicator
+4;FirstUser;Default user for all strategies;Active;superadmin;2023-01-15T08:00:00Z;superadmin;2024-01-15T08:00:00Z;N
+5;User;Normal application user;Active;superadmin;2023-03-12T10:15:00Z;superadmin;2024-02-01T12:00:00Z;N

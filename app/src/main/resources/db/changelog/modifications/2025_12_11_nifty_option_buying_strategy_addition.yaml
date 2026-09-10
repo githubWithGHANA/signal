@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: niftyOptionBuyingStrategyYamlInserts/nifty_option_buying_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: niftyOptionBuyingStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: niftyOptionBuyingStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

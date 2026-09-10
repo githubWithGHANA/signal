@@ -1,0 +1,135 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author: imran
+      changes:
+        - createTable:
+            tableName: signal
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_signal
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: strategy_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: strategy_addition_id
+                  type: BIGINT
+              - column:
+                  name: execution_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deployed_on
+                  type: VARCHAR(255)
+              - column:
+                  name: multiplier
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: capital
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: profit_loss
+                  type: BIGINT
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: signals_seq
+            incrementBy: 1
+            startValue: 1000
+
+        - addUniqueConstraint:
+            columnNames: strategy_addition_id
+            constraintName: uc_signal_strategy_addition
+            tableName: signal
+
+  - changeSet:
+      id: 24
+      author: imran
+      changes:
+        - addColumn:
+            tableName: signal
+            columns:
+              - name: position_type
+                type: VARCHAR(255)
+                constraints:
+                  nullable: true
+
+  - changeSet:
+      id: 36
+      author: imran
+      changes:
+        - addColumn:
+            tableName: signal
+            columns:
+              - column:
+                  name: base_index_price
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: latest_index_price
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: underlying_id
+                  type: BIGINT
+
+
+  - changeSet:
+      id: 37
+      author: imran
+      changes:
+        - addColumn:
+            tableName: signal
+            columns:
+              - name: last_pnl
+                type: VARCHAR(255)
+                constraints:
+                  nullable: true
+
+

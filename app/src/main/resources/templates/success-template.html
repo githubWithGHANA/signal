@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+          background-color: #101820;
+          color: #d0ffd6;
+          font-family: 'Courier New', Courier, monospace;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          max-width: 640px;
+          margin: 40px auto;
+          background-color: #1a2a23;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 20px #0f3d2e;
+          border: 1px solid #19f77b;
+        }
+
+        h1 {
+          color: #19f77b;
+          font-size: 22px;
+          border-bottom: 1px dashed #19f77b;
+          padding-bottom: 10px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 1.6;
+          color: #b8f7d3;
+        }
+
+        .highlight {
+          background-color: #0c1e14;
+          padding: 10px 15px;
+          border-left: 4px solid #19f77b;
+          margin: 15px 0;
+          font-family: monospace;
+        }
+
+        .footer {
+          text-align: center;
+          color: #6effa5;
+          font-size: 12px;
+          padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>✅ XTS Login Success</h1>
+    <p>Dear Trader,</p>
+    <p>Your login into the Algo Trading System was successful.</p>
+
+    <div class="highlight">
+        Date: {{date}}<br/>
+        Time: {{time}}<br/>
+        Access: GRANTED
+    </div>
+
+    <p>Platform is ready for operations. All systems are running in sync.</p>
+    <p>Stay sharp and trade safe.</p>
+
+    <div class="footer">
+        &copy; 2025 QuantLab Algo | Secure Terminal Notification
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+
+spring:
+  jackson:
+    time-zone: Asia/Kolkata
+  datasource:
+    url: jdbc:postgresql://localhost:5432/signal_dev
+    username: dev_admin
+    password: bps@1122
+    driver-class-name: "org.postgresql.Driver"
+    profiles:
+      active: dev
+    hikari:
+      maximum-pool-size: 20
+      max-lifetime: 1000000
+      connection-timeout: 30000
+      idle-timeout: 60000
+      minimum-idle: 10
+      data-source-properties:
+        serverTimezone: Asia/Kolkata
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: signal
+        format_sql: false
+        use_second_level_cache: false
+        use_sql_comments: false
+        connection:
+          autocommit: true
+          isolation: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: off
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: signal
+  web:
+    resources:
+      static-locations:
+        - classpath:/META-INF/resources/
+        - classpath:/resources/
+        - classpath:/static/
+        - classpath:/public/
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000ms
+      connect-timeout: 10000ms
+      lettuce:
+        pool:
+          max-active: 5
+          max-idle: 2
+          min-idle: 1
+          max-wait: 5000ms
+        shutdown-timeout: 250ms
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+
+logging:
+  file:
+    path: logs/signal-quantlogs
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/signal-quantlogs-%d{yyyy-MM-dd}.log
+      max-history: 365
+      total-size-cap: 100MB
+  level:
+    io:
+      grpc: error
+    root: info
+    org:
+      grpc: error
+      postgresql: warn
+      redisson: warn
+      hibernate: warn
+      hibernate.orm.query: error
+      apache:
+        tomcat: error
+      springframework: info
+    com:
+      quantlab: debug
+      zaxxer:
+        hikari: info
+grpc:
+  client:
+    grpc-quantlab-service-xts:
+      address: static://localhost:9000
+      negotiation-type: plaintext
+    grpc-quantlab-service-tr:
+      address: static://localhost:9040
+      negotiation-type: plaintext
+    grpc-quantlab-service-tr-stt:
+      address: static://localhost:9050
+      negotiation-type: plaintext
+
+xts:
+  location: "localhost"
+  port: 9000
+tr:
+  location: "localhost"
+  port: 9040
+tr-stt:
+  location: "localhost"
+  port: 9050
+
+email:
+  sender: engineering@quantlab.tech
+  password: "oaak psmf dris pzwf"
+
+# ENDPOINTS for SSO Login
+ENDPOINT:
+  validate: https://ssologin-uat.dhanistocks.com/v1/partner/validate-session?clientId=
+  profile: https://internal-partner-uat.ibullssecurities.com/client-profile?clientId=
+  appID: quantlab
+  appKey: mtOwyowygskpv8r6is6kddxhjanvsbsl
+  xtsUrl: https://xts-uat.ibullssecurities.com
+
+threads:
+  pool:
+    Pnl: 1

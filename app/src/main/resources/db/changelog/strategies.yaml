@@ -1,0 +1,171 @@
+databaseChangeLog:
+  - changeSet:
+      id: 13
+      author: imran
+      changes:
+        - createTable:
+            tableName: strategy
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_strategy
+              - column:
+                  name: sc_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: addition_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: type_of_strategy
+                  type: VARCHAR(255)
+              - column:
+                  name: underlying_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: underling_type
+                  type: VARCHAR(255)
+              - column:
+                  name: s_position_type
+                  type: VARCHAR(255)
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: atm_type
+                  type: VARCHAR(255)
+              - column:
+                  name: expiry
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: strategy_tag
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_id
+                  type: BIGINT
+              - column:
+                  name: expiry_type
+                  type: VARCHAR(255)
+              - column:
+                  name: category
+                  type: VARCHAR(255)
+              - column:
+                  name: min_capital
+                  type: BIGINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: multiplier
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: stop_loss
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: target
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: execution_type
+                  type: VARCHAR(255)
+              - column:
+                  name: hold_type
+                  type: VARCHAR(255)
+              - column:
+                  name: re_signal_count
+                  type: INT
+              - column:
+                  name: signal_count
+                  type: INT
+              - column:
+                  name: draw_down
+                  type: BIGINT
+              - column:
+                  name: strike_date
+                  type: DATETIME
+              - column:
+                  name: trailing_stoploss
+                  type: BIGINT
+              - column:
+                  name: original_template
+                  type: VARCHAR(255)
+              - column:
+                  name: algo_id
+                  type: VARCHAR(255)
+              - column:
+                  name: algo_category
+                  type: VARCHAR(255)
+              - column:
+                  name: strategy_source_id
+                  type: BIGINT
+              - column:
+                  name: trailing_stoploss_type
+                  type: VARCHAR(255)
+              - column:
+                  name: last_deployed_on
+                  type: VARCHAR(255)
+              - column:
+                  defaultValue: N
+                  name: subscription
+                  type: VARCHAR(255)
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: strategies_seq
+            incrementBy: 1
+            startValue: 1000
+
+        - addUniqueConstraint:
+            columnNames: addition_id
+            constraintName: uc_strategy_addition
+            tableName: strategy

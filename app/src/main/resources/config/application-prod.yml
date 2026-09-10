@@ -1,0 +1,111 @@
+
+spring:
+
+  jackson:
+    time-zone: Asia/Kolkata
+  datasource:
+    url: jdbc:postgresql://172.17.66.30:5432/signal_db
+    username: postgres_ib
+    password: K1Y8LVolVPwmyU6V
+    #    url: jdbc:postgresql://signal_db:5432/signal_dev
+    #    username: dev_admin
+    #    password: bps@1122
+    driver-class-name: "org.postgresql.Driver"
+    profiles:
+      active: prod
+    hikari:
+      connection-timeout: 26000
+      idle-timeout: 30000
+      leak-detection-threshold: 300
+      maximum-pool-size: 50
+      minimum-idle: 2
+      max-lifetime: 1800000
+      keepalive-time: 300000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: signal
+        format_sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: signal
+  data:
+    redis:
+      host: 172.30.23.30
+      port: 6379
+      timeout: 60000ms
+      connect-timeout: 10000ms
+      lettuce:
+        pool:
+          max-active: 50
+          max-idle: 20
+          min-idle: 10
+          max-wait: 5000ms
+        shutdown-timeout: 250ms
+      password: "ba5fb0a30e26e83b2ac5b9e29e1b161e5c"
+
+server:
+  port: 8082
+  servlet:
+    context-path: /ql
+
+logging:
+  file:
+    name: logs/spring-logs.log
+    path: logs/signal.logs
+  logback:
+    rollingpolicy:
+      file-name-pattern: logs/signal-quantlogs-%d{yyyy-MM-dd}.log
+      max-history: 365
+      total-size-cap: 100MB
+      max-file-size: 100MB
+
+  level:
+    com:
+      zaxxer:
+        hikari: info
+    root: info
+    org:
+      springframework: info
+    sql: info
+
+
+grpc:
+  client:
+    grpc-quantlab-service-xts:
+      address: static://172.30.23.30:9000
+      negotiation-type: plaintext
+    grpc-quantlab-service-tr:
+      address: static://172.30.23.30:9040
+      negotiation-type: plaintext
+    grpc-quantlab-service-tr-stt:
+      address: static://172.30.23.30:9050
+      negotiation-type: plaintext
+xts:
+  location: "172.30.23.30"
+  port: 9000
+tr:
+  location: "172.30.23.30" #Add actual location and port
+  port: 9040
+tr-stt:
+  location: "172.30.23.30"
+  port: 9050
+
+
+email:
+  sender: mohammedimran0266@gmail.com
+
+ENDPOINT:
+  validate: https://ssologin.dhanistocks.com/v1/partner/validate-session?clientId=
+  profile: https://internal-partner.ibullssecurities.com/client-profile?clientId=
+  appID: quantlab
+  appKey: mOOcxatz754ndrsrryzeh5snfncpcwka
+  xtsUrl: https://xts.ibullssecurities.com
+
+threads:
+  pool:
+    Pnl: 1

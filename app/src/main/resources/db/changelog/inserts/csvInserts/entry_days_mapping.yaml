@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/entity_days_mapping.csv
+            tableName: entity_days_mapping
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: sc_id
+                  type: integer
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string

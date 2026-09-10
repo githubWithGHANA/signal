@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    .email-header {
+      background-color: #d9534f;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .email-body {
+      padding: 20px;
+    }
+    .email-body p {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #333333;
+    }
+    .email-body .highlight {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid #007bff;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .email-footer {
+      background-color: #f9f9f9;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #666666;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #ffffff;
+      background-color: #007bff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="email-container">
+  <div class="email-header">XTS Login Attempt - Failed</div>
+  <div class="email-body">
+    <p><strong>Date:</strong> [dd/mm/yy]</p>
+    <p><strong>Time:</strong> 8:15 AM</p>
+    <div class="highlight">
+      <p><strong>Details:</strong></p>
+      <p><strong>Login Attempt:</strong> First Attempt</p>
+      <p><strong>Status:</strong> Not Successful</p>
+      <p><strong>Reason:</strong> [Password Failed / PIN Failed]</p>
+    </div>
+    <p><strong>Next Step:</strong></p>
+    <p>We will attempt to log in again at <strong>8:30 AM</strong>.</p>
+  </div>
+  <div class="email-footer">
+    Best regards, <br>
+    [QuantLab Algo]
+  </div>
+</div>
+</body>
+</html>

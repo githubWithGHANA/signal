@@ -1,0 +1,2113 @@
+databaseChangeLog:
+- changeSet:
+    id: 1731873017001-1
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_app_user
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: VARCHAR(255)
+        - column:
+            name: token_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: user_name
+            type: VARCHAR(255)
+        - column:
+            name: user_account_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: user_role
+            type: BIGINT
+        - column:
+            name: tenent_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: admin_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: investment
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: current_value
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: today_profit_loss
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: overall_profit_loss
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: app_user
+- changeSet:
+    id: 1731873017001-2
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_entry_details
+            name: id
+            type: BIGINT
+        - column:
+            name: entry_hour_time
+            type: INTEGER
+        - column:
+            name: entry_mins_time
+            type: INTEGER
+        - column:
+            name: entry_sec_time
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: strategy_id
+            type: BIGINT
+        - column:
+            name: entry_time
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: entry_details
+- changeSet:
+    id: 1731873017001-3
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_exit_details
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: strategy_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: profit_mtm_unit_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: profit_mtm_unit_value
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: stoploss_mtm_unit_value
+            type: BIGINT
+        - column:
+            name: exit_on_expiry_flag
+            type: VARCHAR(255)
+        - column:
+            name: exit_after_entry_days
+            type: INTEGER
+        - column:
+            name: exit-time
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: exit_hour_time
+            type: INTEGER
+        - column:
+            name: exit_mins_time
+            type: INTEGER
+        - column:
+            name: exit_sec_time
+            type: time(6) WITHOUT TIME ZONE
+        - column:
+            name: target_unit_type
+            type: VARCHAR(255)
+        - column:
+            name: target_unit_value
+            type: BIGINT
+        - column:
+            name: stop_loss_unit_type
+            type: VARCHAR(255)
+        - column:
+            name: stop_loss_unit_value
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: exit_details
+- changeSet:
+    id: 1731873017001-4
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_strategy
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: s_id
+            type: BIGINT
+        - column:
+            name: entry_id
+            type: BIGINT
+        - column:
+            name: addition_id
+            type: BIGINT
+        - column:
+            name: exit_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: desc
+            type: VARCHAR(255)
+        - column:
+            name: type_of_strategy
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: underlying_id
+            type: BIGINT
+        - column:
+            name: underling_type
+            type: VARCHAR(255)
+        - column:
+            name: s_position_type
+            type: VARCHAR(255)
+        - column:
+            name: status
+            type: VARCHAR(255)
+        - column:
+            name: atm_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: expiry
+            type: VARCHAR(255)
+        - column:
+            name: admin_id
+            type: BIGINT
+        - column:
+            name: expiry_type
+            type: VARCHAR(255)
+        - column:
+            name: category
+            type: VARCHAR(255)
+        - column:
+            name: min_capital
+            type: BIGINT
+        - column:
+            name: user_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: multiplier
+            type: BIGINT
+        - column:
+            name: stop_loss
+            type: BIGINT
+        - column:
+            name: delta_slippage
+            type: BIGINT
+        - column:
+            name: target
+            type: BIGINT
+        - column:
+            name: execution_type
+            type: VARCHAR(255)
+        - column:
+            name: re_signal_count
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: strategy
+- changeSet:
+    id: 1731873017001-5
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_strategy_addition
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: sc_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: stratagy_id
+            type: BIGINT
+        - column:
+            name: delta_slippage
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: strategy_addition
+- changeSet:
+    id: 1731873017001-6
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_user_admin
+            name: id
+            type: BIGINT
+        - column:
+            name: admin_id
+            type: BIGINT
+        - column:
+            name: admin_name
+            type: VARCHAR(255)
+        - column:
+            name: first_name
+            type: VARCHAR(255)
+        - column:
+            name: middle_name
+            type: VARCHAR(255)
+        - column:
+            name: last_name
+            type: VARCHAR(255)
+        - column:
+            name: role_name
+            type: VARCHAR(255)
+        - column:
+            name: admin_level
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: VARCHAR(255)
+        - column:
+            name: password
+            type: VARCHAR(255)
+        - column:
+            name: phone_number
+            type: VARCHAR(255)
+        - column:
+            name: otp
+            type: VARCHAR(255)
+        - column:
+            name: otp_expiry
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: otp_status
+            type: VARCHAR(255)
+        - column:
+            name: status
+            type: VARCHAR(255)
+        - column:
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: user_admin
+- changeSet:
+    id: 1731873017001-7
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: user_id
+        constraintName: uc_app_user_user
+        tableName: app_user
+- changeSet:
+    id: 1731873017001-8
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: user_role
+        constraintName: uc_app_user_user_role
+        tableName: app_user
+- changeSet:
+    id: 1731873017001-9
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: strategy_id
+        constraintName: uc_entry_details_strategy
+        tableName: entry_details
+- changeSet:
+    id: 1731873017001-10
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: strategy_id
+        constraintName: uc_exit_details_strategy
+        tableName: exit_details
+- changeSet:
+    id: 1731873017001-11
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: addition_id
+        constraintName: uc_strategy_addition
+        tableName: strategy
+- changeSet:
+    id: 1731873017001-12
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: entry_id
+        constraintName: uc_strategy_entry
+        tableName: strategy
+- changeSet:
+    id: 1731873017001-13
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: exit_id
+        constraintName: uc_strategy_exit
+        tableName: strategy
+- changeSet:
+    id: 1731873017001-14
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: stratagy_id
+        constraintName: uc_strategy_addition_stratagy
+        tableName: strategy_addition
+- changeSet:
+    id: 1731873017001-15
+    author: panga (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: email
+        constraintName: uc_user_admin_email
+        tableName: user_admin
+- changeSet:
+    id: 1731873017001-16
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: app_user_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-17
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: entity_days_mapping_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-18
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: entry_days_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-19
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: entry_details_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-20
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: exit_setting_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-21
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: instrument_details_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-22
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: leg_line_expiry_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-23
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: orders_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-24
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: positions_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-25
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: signals_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-26
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: status_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-27
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: strategies_legs_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-28
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: strategies_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-29
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: strategy_category_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-30
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: strikes_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-31
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: underlying_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-32
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: user_admins_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-33
+    author: panga (generated)
+    changes:
+    - createSequence:
+        cacheSize: 1
+        cycle: false
+        dataType: bigint
+        incrementBy: 50
+        maxValue: 9223372036854775807
+        minValue: 1
+        sequenceName: user_roles_seq
+        startValue: 1
+- changeSet:
+    id: 1731873017001-34
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_entity_days_mapping
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: sc_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: entity_days_mapping
+- changeSet:
+    id: 1731873017001-35
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_entry_days
+            name: id
+            type: BIGINT
+        - column:
+            name: day
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        - column:
+            name: days
+            type: BIGINT
+        tableName: entry_days
+- changeSet:
+    id: 1731873017001-36
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_instrument_details
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_segment_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: index
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_instrument_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: expiry_date
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: instrument_details
+- changeSet:
+    id: 1731873017001-37
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_leg_line_expiry
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: leg_exp_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: leg_line_expiry_date
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: leg_line_expiry
+- changeSet:
+    id: 1731873017001-38
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_order
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_order_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: sc_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: execution_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: deployed_on
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: quantity
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: price
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_instrument_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_segment
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: underlying
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: instrument_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: leg_exp_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: signal_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: order
+- changeSet:
+    id: 1731873017001-39
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_position
+            name: id
+            type: BIGINT
+        - column:
+            name: postion_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: sc_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: execution_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: deployed_on
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: quantity
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: average_price
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_instrument_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_segment
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: underlying
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: instrument_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: broker_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: total_open_quantity
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: total_mtm
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: position
+- changeSet:
+    id: 1731873017001-40
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_signal
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: strategy_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: execution_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            name: deployed_on
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: multiplier
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: capital
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        - column:
+            name: signal_id
+            type: BIGINT
+        tableName: signal
+- changeSet:
+    id: 1731873017001-41
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_status
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: status
+- changeSet:
+    id: 1731873017001-42
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_strategy_category
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: s_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: s_desc
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: s_category
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: strategy_category
+- changeSet:
+    id: 1731873017001-43
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_strategy_leg
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: sc_id
+            type: BIGINT
+        - column:
+            name: strategy_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: segment
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: buy_sell_flag
+            type: VARCHAR(255)
+        - column:
+            name: skt_name
+            type: VARCHAR(255)
+        - column:
+            name: leg_exp_name
+            type: VARCHAR(255)
+        - column:
+            name: leg_line_expiry_date
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: no_of_lots
+            type: BIGINT
+        - column:
+            name: target_unit
+            type: VARCHAR(255)
+        - column:
+            name: target_unit_value
+            type: BIGINT
+        - column:
+            name: stop_loss_unit
+            type: VARCHAR(255)
+        - column:
+            name: stop_loss_unit_value
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: signal_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: price
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: exchange_instrument_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: admin_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: option_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: leg_type
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: quantity
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: last_updated_quantity
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: multi_orders_flag
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: strategy_leg
+            type: BIGINT
+        tableName: strategy_leg
+- changeSet:
+    id: 1731873017001-44
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_strike
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: stk_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: strike
+- changeSet:
+    id: 1731873017001-45
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_underlying
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: u_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: u_id
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: underlying
+- changeSet:
+    id: 1731873017001-46
+    author: panga (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pk_userrole
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: role_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: role_desc
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_by
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: delete_indicator
+            type: VARCHAR(255)
+        tableName: userrole
+- changeSet:
+    id: 1731873017001-47
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: admin_id
+        baseTableName: app_user
+        constraintName: fk_app_user_on_admin
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: user_admin
+        validate: true
+- changeSet:
+    id: 1731873017001-48
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_role
+        baseTableName: app_user
+        constraintName: fk_app_user_on_user_role
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: userrole
+        validate: true
+- changeSet:
+    id: 1731873017001-49
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sc_id
+        baseTableName: entity_days_mapping
+        constraintName: fk_entity_days_mapping_on_sc
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_category
+        validate: true
+- changeSet:
+    id: 1731873017001-50
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: days
+        baseTableName: entry_days
+        constraintName: fk_entry_days_on_days
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: entry_details
+        validate: true
+- changeSet:
+    id: 1731873017001-51
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: strategy_id
+        baseTableName: entry_details
+        constraintName: fk_entry_details_on_strategy
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy
+        validate: true
+- changeSet:
+    id: 1731873017001-52
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: strategy_id
+        baseTableName: exit_details
+        constraintName: fk_exit_details_on_strategy
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy
+        validate: true
+- changeSet:
+    id: 1731873017001-53
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: leg_exp_id
+        baseTableName: order
+        constraintName: fk_order_on_leg_exp
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: leg_line_expiry
+        validate: true
+- changeSet:
+    id: 1731873017001-54
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sc_id
+        baseTableName: order
+        constraintName: fk_order_on_sc
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_category
+        validate: true
+- changeSet:
+    id: 1731873017001-55
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: signal_id
+        baseTableName: order
+        constraintName: fk_order_on_signal
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: signal
+        validate: true
+- changeSet:
+    id: 1731873017001-56
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: order
+        constraintName: fk_order_on_user
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: userrole
+        validate: true
+- changeSet:
+    id: 1731873017001-57
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sc_id
+        baseTableName: position
+        constraintName: fk_position_on_sc
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_category
+        validate: true
+- changeSet:
+    id: 1731873017001-58
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: position
+        constraintName: fk_position_on_user
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: userrole
+        validate: true
+- changeSet:
+    id: 1731873017001-59
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: signal_id
+        baseTableName: signal
+        constraintName: fk_signal_on_signal
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy
+        validate: true
+- changeSet:
+    id: 1731873017001-60
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: strategy_id
+        baseTableName: signal
+        constraintName: fk_signal_on_strategy
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy
+        validate: true
+- changeSet:
+    id: 1731873017001-61
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: signal
+        constraintName: fk_signal_on_user
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: app_user
+        validate: true
+- changeSet:
+    id: 1731873017001-62
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sc_id
+        baseTableName: strategy_addition
+        constraintName: fk_strategy_addition_on_sc
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_category
+        validate: true
+- changeSet:
+    id: 1731873017001-63
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: stratagy_id
+        baseTableName: strategy_addition
+        constraintName: fk_strategy_addition_on_stratagy
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy
+        validate: true
+- changeSet:
+    id: 1731873017001-64
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: admin_id
+        baseTableName: strategy_leg
+        constraintName: fk_strategy_leg_on_admin
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: user_admin
+        validate: true
+- changeSet:
+    id: 1731873017001-65
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sc_id
+        baseTableName: strategy_leg
+        constraintName: fk_strategy_leg_on_sc
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_category
+        validate: true
+- changeSet:
+    id: 1731873017001-66
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: signal_id
+        baseTableName: strategy_leg
+        constraintName: fk_strategy_leg_on_signal
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: signal
+        validate: true
+- changeSet:
+    id: 1731873017001-67
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: strategy_id
+        baseTableName: strategy_leg
+        constraintName: fk_strategy_leg_on_strategy
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy
+        validate: true
+- changeSet:
+    id: 1731873017001-68
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: strategy_leg
+        baseTableName: strategy_leg
+        constraintName: fk_strategy_leg_on_strategy_leg
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: signal
+        validate: true
+- changeSet:
+    id: 1731873017001-69
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: strategy_leg
+        constraintName: fk_strategy_leg_on_user
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: app_user
+        validate: true
+- changeSet:
+    id: 1731873017001-70
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: addition_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_addition
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_addition
+        validate: true
+- changeSet:
+    id: 1731873017001-71
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: admin_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_admin
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: user_admin
+        validate: true
+- changeSet:
+    id: 1731873017001-72
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: entry_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_entry
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: entry_details
+        validate: true
+- changeSet:
+    id: 1731873017001-73
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: exit_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_exit
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: exit_details
+        validate: true
+- changeSet:
+    id: 1731873017001-74
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: s_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_s
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: strategy_category
+        validate: true
+- changeSet:
+    id: 1731873017001-75
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: underlying_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_underlying
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: underlying
+        validate: true
+- changeSet:
+    id: 1731873017001-76
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: strategy
+        constraintName: fk_strategy_on_user
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: app_user
+        validate: true
+- changeSet:
+    id: 1731873017001-77
+    author: panga (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: admin_id
+        baseTableName: user_admin
+        constraintName: fk_user_admin_on_admin
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: user_admin
+        validate: true
+

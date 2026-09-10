@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-broker-name-id-userauthconstants
+      author: bhargava_g
+      changes:
+        - addColumn:
+            tableName: user_auth_constants
+            columns:
+              - column:
+                  name: broker_name
+                  type: VARCHAR(255)
+              - column:
+                  name: branch_id
+                  type: VARCHAR(255)

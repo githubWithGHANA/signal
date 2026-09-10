@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025-11-21-add-index-entrydetails-strategyid
+      author: automated
+      changes:
+        - createIndex:
+            tableName: entry_details
+            indexName: idx_entry_details_strategy_id
+            columns:
+              - column:
+                  name: strategy_id
+                  type: bigint
+  - changeSet:
+      id: 2025-11-21-add-index-exitdetails-strategyid
+      author: automated
+      changes:
+        - createIndex:
+            tableName: exit_details
+            indexName: idx_exit_details_strategy_id
+            columns:
+              - column:
+                  name: strategy_id
+                  type: bigint
+

@@ -1,0 +1,62 @@
+databaseChangeLog:
+  - changeSet:
+      id: 21
+      author: imran
+      changes:
+        - createTable:
+            tableName: strategy_addition
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_strategy_addition
+              - column:
+                  name: strategy_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delta_slippage
+                  type: BIGINT
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            incrementBy: 1
+            sequenceName: strategy_addition_seq
+            startValue: 1000
+
+        - addUniqueConstraint:
+            columnNames: strategy_id
+            constraintName: uc_strategy_addition_strategy
+            tableName: strategy_addition
+
+
+
+
+
+

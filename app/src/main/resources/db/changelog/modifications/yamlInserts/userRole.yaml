@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 35
+      author: your_name
+      changes:
+        - loadUpdateData:
+            file: db/changelog/modifications/csv/2025_07_31_user_roles.csv
+            tableName: userrole
+            primaryKey: id
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: role_name
+                  type: string
+              - column:
+                  name: role_desc
+                  type: string
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string

@@ -1,0 +1,249 @@
+databaseChangeLog:
+  - changeSet:
+      id: 11
+      author: imran
+      changes:
+        - createTable:
+            tableName: strategy_leg
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_strategy_leg
+              - column:
+                  name: strategy_id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: segment
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: buy_sell_flag
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: skt_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: skt_selection
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: skt_selection_value
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_exp_name
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_line_expiry_date
+                  type: DATETIME
+              - column:
+                  name: no_of_lots
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: target_unit_toggle
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: target_unit_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: target_unit_value
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: stoploss_unit_toggle
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: stoploss_unit_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: stoploss_unit_value
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: signal_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: BIGINT
+              - column:
+                  name: executed_price
+                  type: BIGINT
+              - column:
+                  name: exchange_instrument_id
+                  type: BIGINT
+              - column:
+                  name: admin_id
+                  type: BIGINT
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: option_type
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_type
+                  type: VARCHAR(255)
+              - column:
+                  name: quantity
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: closing_price
+                  type: BIGINT
+              - column:
+                  name: last_updated_quantity
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: multi_orders_flag
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: traded_price
+                  type: BIGINT
+              - column:
+                  name: lot_size
+                  type: BIGINT
+              - column:
+                  name: profit_loss
+                  type: BIGINT
+              - column:
+                  name: trailing_stoploss_points
+                  type: BIGINT
+              - column:
+                  name: trailing_distance
+                  type: BIGINT
+              - column:
+                  name: trailing_trade_point
+                  type: BIGINT
+              - column:
+                  name: trailing_stoploss_toggle
+                  type: VARCHAR(255)
+              - column:
+                  name: trailing_stoploss_type
+                  type: VARCHAR(255)
+              - column:
+                  name: trailing_stoploss_value
+                  type: BIGINT
+              - column:
+                  name: trailing_stoploss_mtm_value
+                  type: BIGINT
+              - column:
+                  name: ltp
+                  type: BIGINT
+              - column:
+                  name: mtm
+                  type: BIGINT
+              - column:
+                  name: current_delta
+                  type: BIGINT
+              - column:
+                  name: current_iv
+                  type: BIGINT
+              - column:
+                  name: constant_delta
+                  type: BIGINT
+              - column:
+                  name: constant_iv
+                  type: BIGINT
+              - column:
+                  name: value
+                  type: BIGINT
+              - column:
+                  name: filled_quantity
+                  type: BIGINT
+              - column:
+                  name: position_quantity
+                  type: BIGINT
+              - column:
+                  name: leg_identifier
+                  type: VARCHAR(255)
+              - column:
+                  name: exchange_status
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_derivative_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: strategies_legs_seq
+            incrementBy: 1
+            startValue: 1000
+
+
+  - changeSet:
+      id: 35
+      author: imran
+      changes:
+        - addColumn:
+            tableName: strategy_leg
+            columns:
+              - column:
+                  name: base_index_price
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: latest_index_price
+                  type: BIGINT
+                  constraints:
+                    nullable: true

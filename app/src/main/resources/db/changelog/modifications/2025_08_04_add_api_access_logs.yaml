@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-api-access-log
+      author: bhargava_g
+      changes:
+        - createSequence:
+            sequenceName: api_access_log_seq
+            startValue: 1000
+            incrementBy: 1
+
+        - createTable:
+            tableName: api_access_log
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: machine_id
+                  type: VARCHAR(255)
+              - column:
+                  name: user_agent
+                  type: VARCHAR(255)
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: request_api
+                  type: VARCHAR(255)
+              - column:
+                  name: api_type
+                  type: VARCHAR(255)
+              - column:
+                  name: tenant_id
+                  type: VARCHAR(255)
+              - column:
+                  name: api_request_body
+                  type: CLOB
+              - column:
+                  name: api_access_time
+                  type: TIMESTAMP
+              - column:
+                  name: request_ip
+                  type: VARCHAR(255)
+              - column:
+                  name: remarks
+                  type: VARCHAR(255)
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)

@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025_10_03_increase_size_in_userConstants
+      author: mahir
+      changes:
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: token
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: otp_session_id
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: tr_token
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: user_session_id
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: jsession_id
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: xts_app_key
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: xts_secret_key
+            newDataType: VARCHAR(2000)
+        - modifyDataType:
+            tableName: user_auth_constants
+            columnName: xts_token
+            newDataType: VARCHAR(2000)

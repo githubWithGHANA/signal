@@ -1,0 +1,117 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: imran
+      changes:
+        - createTable:
+            tableName: exit_details
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_exit_details
+              - column:
+                  name: strategy_id
+                  type: BIGINT
+              - column:
+                  name: profit_mtm_unit_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: profit_mtm_unit_value
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: stoploss_mtm_unit_value
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: exit_on_expiry_flag
+                  type: VARCHAR(255)
+              - column:
+                  name: exit_after_entry_days
+                  type: INT
+              - column:
+                  name: exit-time
+                  type: DATETIME
+              - column:
+                  name: exit_hour_time
+                  type: INT
+              - column:
+                  name: exit_mins_time
+                  type: INT
+              - column:
+                  name: exit_sec_time
+                  type: INT
+              - column:
+                  name: target_unit_toggle
+                  type: VARCHAR(255)
+              - column:
+                  name: target_unit_type
+                  type: VARCHAR(255)
+              - column:
+                  name: target_unit_value
+                  type: BIGINT
+              - column:
+                  name: stop_loss_unit_type
+                  type: VARCHAR(255)
+              - column:
+                  name: stop_loss_unit_toggle
+                  type: VARCHAR(255)
+              - column:
+                  name: stop_loss_unit_value
+                  type: BIGINT
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: exit_details_seq
+            incrementBy: 1
+            startValue: 1000
+
+        - addUniqueConstraint:
+            columnNames: strategy_id
+            constraintName: uc_exit_details_strategy
+            tableName: exit_details
+
+  - changeSet:
+      id: 43
+      author: imran
+      changes:
+        - dropNotNullConstraint:
+            tableName: exit_details
+            columnName: stoploss_mtm_unit_value
+            columnDataType: BIGINT
+

@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-index-strategy-user-category-id
+      author: mahir
+      runInTransaction: false
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - indexExists:
+                indexName: idx_strategy_user_category_id
+                tableName: strategy
+      changes:
+        - createIndex:
+            indexName: idx_strategy_user_category_id
+            tableName: strategy
+            concurrently: true
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: category
+              - column:
+                  name: id
+      rollback:
+        - dropIndex:
+            indexName: idx_strategy_user_category_id
+            tableName: strategy
+

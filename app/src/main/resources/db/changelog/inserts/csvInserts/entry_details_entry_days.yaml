@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 27
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/entry_details_entry_days.csv
+            tableName: entry_details_entry_days
+            separator: ";"
+            columns:
+              - column:
+                  name: entry_details_id
+                  type: integer
+              - column:
+                  name: entry_days_id
+                  type: integer

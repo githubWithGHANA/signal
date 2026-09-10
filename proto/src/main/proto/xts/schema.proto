@@ -1,0 +1,223 @@
+syntax = "proto3";
+option java_multiple_files = true;
+import "google/protobuf/wrappers.proto";
+
+package com.market.proto.xts;
+
+
+
+// Define the PlaceOrderResponse message
+message OrderResponse {
+  string appOrderID = 1;
+  string code = 2;
+  string description = 3;
+  string type = 4;
+  string orderUniqueIdentifier = 5;
+}
+
+// Define the PlaceOrderRequest message
+message PlaceOrder {
+  string exchangeSegment = 1;
+  int32 exchangeInstrumentId = 2;
+  string orderType = 3;
+  string orderSide = 4;
+  string timeInForce = 5;
+  int32 noLots = 6;
+  int32 lotSize = 7;
+  double limitPrice = 8;
+  string orderUniqueIdentifier = 10;
+  string productType = 11;
+  int32 multiply = 12;
+  string clientID = 13;
+  string userID = 14;
+  string algoID = 15;
+  string algoCategory =16;
+}
+
+// Define the PlaceOrderRequest message, now with a list of orders
+message PlaceOrderRequest {
+  string signalID = 1;
+  string tenantID = 2;
+  string appKey = 3;
+  string secretKey = 4;
+  string token = 5;
+  google.protobuf.BoolValue exitFlag = 6;
+  repeated PlaceOrder orders = 7;
+  int32 requiredCapital = 8;
+}
+
+// Define the PlaceOrderResponse message
+message PlaceOrderResponse {
+  string status = 1;
+  repeated OrderResponse response = 2;
+  string signalID = 3;
+  string tenantID = 4;
+  repeated string errors = 5;
+
+}
+
+// --- PlaceOrderService  ---
+
+service PlaceOrderService {
+  // Endpoint to place an order
+  rpc PlaceOrder(PlaceOrderRequest) returns (PlaceOrderResponse);
+}
+
+// ---  Streaming Service for Position Response ---
+
+// Define the PositionResponseStream message
+message PositionResponseStream {
+  string exchangeSegment = 1;
+  int32 exchangeInstrumentID = 2;
+  string loginID = 3;
+  string clientID = 4;
+  string productType = 5;
+  double longPosition = 6;
+  double shortPosition = 7;
+  double netPosition = 8;
+  string buyAveragePrice = 9;
+  string sellAveragePrice = 10;
+  string buyValue = 11;
+  string sellValue = 12;
+  string netValue = 13;
+  string unrealizedMTM = 14;
+  string realizedMTM = 15;
+  string mtm = 16;
+  string bep = 17;
+  string sumOfTradedQuantityAndPriceBuy = 18;
+  string sumOfTradedQuantityAndPriceSell = 19;
+  string uniqueKey = 20;
+  int32 messageCode = 21;
+  int32 messageVersion = 22;
+  int32 tokenID = 23;
+  int32 applicationType = 24;
+}
+
+// Define the PositionStreamRequest message for requesting position data from Service
+message PositionStreamRequest {
+  string type = 1;  // Type of data to filter (e.g., "position updates")
+}
+
+// Define the PositionService service for streaming position data
+service PositionService {
+  // Server-streaming RPC to stream position data to the client
+  rpc StreamPositionData (PositionStreamRequest) returns (stream PositionResponseStream);
+}
+
+
+
+// ---  Streaming Service for Order Book Response ---
+
+message OrderBookResponseStream {
+  string loginID = 1;
+  string clientID = 2;
+  string appOrderID = 3;
+  string orderReferenceID = 4;
+  string generatedBy = 5;
+  string exchangeOrderID = 6;
+  string orderCategoryType = 7;
+  string exchangeSegment = 8;
+  int32 exchangeInstrumentID = 9;
+  string orderSide = 10;
+  string orderType = 11;
+  string productType = 12;
+  string timeInForce = 13;
+  double orderPrice = 14;
+  double orderQuantity = 15;
+  double orderStopPrice = 16;
+  string orderStatus = 17;
+  string orderAverageTradedPrice = 18;
+  double leavesQuantity = 19;
+  double cumulativeQuantity = 20;
+  double orderDisclosedQuantity = 21;
+  string orderGeneratedDateTime = 22;
+  string exchangeTransactTime = 23;
+  string lastUpdateDateTime = 24;
+  string orderExpiryDate = 25;
+  string cancelRejectReason = 26;
+  string orderUniqueIdentifier = 27;
+  string orderLegStatus = 28;
+  int32 messageCode = 29;
+  int32 messageVersion = 30;
+  int32 tokenID = 31;
+  int32 applicationType = 32;
+  string uniqueKey = 33; // Unique identifier for the order book update
+}
+
+// Define the OrderBookStreamRequest message for requesting order book data
+message OrderBookStreamRequest {
+  string type = 1;  // Type of data to filter (e.g., "order book updates")
+  string symbol = 2; // Symbol for the instrument (optional, if filtering is needed)
+}
+
+message MarginCheckLogin {
+  string clientID = 1;
+  string appKey = 2;
+  string secretKey = 3;
+  string token = 4;
+}
+
+message MarginCheckResponse {
+  string clientID = 1;
+  bool success = 2;
+  string description = 3;
+  string status = 4;
+}
+
+service MarginCheckService {
+  // When user logs in, check if the user has sufficient margin
+  rpc LoginMarginCheck (MarginCheckLogin) returns (MarginCheckResponse);
+}
+
+// Define the OrderBookStreamService service for streaming order book data
+service OrderBookStreamService {
+  // Server-streaming RPC to stream order book data to the client
+  rpc StreamOrderBookData (OrderBookStreamRequest) returns (stream OrderBookResponseStream);
+}
+
+// --- Define SquareOffRequest Message ---
+message SquareOff {
+  string exchangeSegment = 1; // Exchange Segment
+  int32 exchangeInstrumentId = 2; // Exchange Instrument ID
+  string productType = 3; // Product Type
+  string posType = 4; // Position Type
+  string positionSquareOffQuantityType = 5; // Square Off Quantity Type
+  int32 squareOffQtyValue = 6; // Square Off Quantity Value
+  string squareOffMode = 7; // Square Off Mode
+  google.protobuf.BoolValue blockOrderSending = 8; // Block Order Sending (true/false)
+  google.protobuf.BoolValue cancelOrders = 9; // Cancel Orders (true/false)
+  string userID = 10;
+  string clientID = 11;
+}
+
+message SquareOffRequest {
+  string signalID = 1;
+  string tenantID = 2;
+  string appKey = 3;
+  string secretKey = 4;
+  repeated SquareOff squareOff = 5;
+}
+
+message SquareOffRes {
+  string userID = 1;
+  string  squareOffMode= 2;
+  string code = 3;
+  string description = 4;
+  string type = 5;
+}
+// --- Define SquareOffResponse Message ---
+message SquareOffResponse {
+  string status = 1;
+  repeated SquareOffRes response = 2;
+  string signalID = 3;
+  string tenantID = 4;
+  repeated string errors = 5;
+}
+
+// --- SquareOffService ---
+// Define the SquareOffService service
+service SquareOffService {
+  // RPC to process SquareOffRequest and return a SquareOffResponse
+  rpc ProcessSquareOff(SquareOffRequest) returns (SquareOffResponse);
+}
+

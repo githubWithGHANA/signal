@@ -1,0 +1,70 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/order.csv
+            tableName: order
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: exchange_order_id
+                  type: string
+              - column:
+                  name: user_id
+                  type: integer
+              - column:
+                  name: execution_type
+                  type: string
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: deployed_on
+                  type: timestamp  # Ensure this is timestamp, not date
+              - column:
+                  name: quantity
+                  type: integer
+              - column:
+                  name: price
+                  type: integer
+              - column:
+                  name: exchange_instrument_id
+                  type: integer
+              - column:
+                  name: exchange_segment
+                  type: integer
+              - column:
+                  name: underlying
+                  type: string
+              - column:
+                  name: instrument_name
+                  type: string
+              - column:
+                  name: leg_exp_id
+                  type: integer
+              - column:
+                  name: signal_id
+                  type: integer
+              - column:
+                  name: strategy_id
+                  type: integer
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp  # Ensure this is timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp  # Ensure this is timestamp
+              - column:
+                  name: delete_indicator
+                  type: string

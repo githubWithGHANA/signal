@@ -1,0 +1,320 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20260324-update-algo-id-bn-delta-neutral
+      author: Mahir
+      comment: "BN - Delta Neutral: NSE Algo ID 137324, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '137324'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 24 OR strategy_source_id = 24"
+
+  - changeSet:
+      id: 20260324-update-algo-id-bn-delta-neutral-hedge
+      author: Mahir
+      comment: "BN - Delta Neutral with Hedge: NSE Algo ID 137324, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '137324'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 25 OR strategy_source_id = 25"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-delta-neutral
+      author: Mahir
+      comment: "Sensex - Delta Neutral: BSE Algo ID 2088030090700012, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700012'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 48 OR strategy_source_id = 48"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-delta-neutral-hedge
+      author: Mahir
+      comment: "Sensex - Delta Neutral with Hedge: BSE Algo ID 2088030090700013, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700013'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 49 OR strategy_source_id = 49"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nf-delta-neutral
+      author: Mahir
+      comment: "NF - Delta Neutral: NSE Algo ID 137324, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '137324'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 22 OR strategy_source_id = 22"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nf-delta-neutral-hedge
+      author: Mahir
+      comment: "NF - Delta Neutral with Hedge: NSE Algo ID 137324, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '137324'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 23 OR strategy_source_id = 23"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nf-atm-straddle
+      author: Mahir
+      comment: "NF - ATM +-2 Straddle: NSE Algo ID 150047, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '150047'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 34 OR strategy_source_id = 34"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-atm-straddle
+      author: Mahir
+      comment: "Sensex - ATM +-2 Straddle: BSE Algo ID 2088030090700014, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700014'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 50 OR strategy_source_id = 50"
+
+  - changeSet:
+      id: 20260324-update-algo-id-phoenix
+      author: Mahir
+      comment: "Phoenix: NSE Algo ID 150048, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '150048'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 35 OR strategy_source_id = 35"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-phoenix
+      author: Mahir
+      comment: "Sensex Phoenix: BSE Algo ID 2088030090700017, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700017'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 53 OR strategy_source_id = 53"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nf-ulta-delta
+      author: Mahir
+      comment: "NF - Ulta Delta: NSE Algo ID 137324, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '137324'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 36 OR strategy_source_id = 36"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-ulta-delta
+      author: Mahir
+      comment: "Sensex - Ulta Delta: BSE Algo ID 2088030090700015, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700015'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 51 OR strategy_source_id = 51"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nf-atm-phoenix
+      author: Mahir
+      comment: "NF ATM Phoenix: NSE Algo ID 150049, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '150049'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 40 OR strategy_source_id = 40"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-atm-phoenix
+      author: Mahir
+      comment: "Sensex ATM Phoenix: BSE Algo ID 2088030090700016, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700016'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 52 OR strategy_source_id = 52"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nifty-scalper
+      author: Mahir
+      comment: "Nifty Scalper: NSE Algo ID 150050, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '150050'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 39 OR strategy_source_id = 39"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-scalper
+      author: Mahir
+      comment: "Sensex Scalper: BSE Algo ID 2088050090700018, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088050090700018'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 54 OR strategy_source_id = 54"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nifty-option-buying
+      author: Mahir
+      comment: "CWA Nifty Option Buying: NSE Algo ID 150050, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '150050'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 43 OR strategy_source_id = 43"
+
+  - changeSet:
+      id: 20260324-update-algo-id-nifty-option-selling
+      author: Mahir
+      comment: "CWA Nifty Option Selling: NSE Algo ID 150051, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '150051'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 42 OR strategy_source_id = 42"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-option-buying
+      author: Mahir
+      comment: "CWA Sensex Option Buying: BSE Algo ID 2088030090700010, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700010'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 44 OR strategy_source_id = 44"
+
+  - changeSet:
+      id: 20260324-update-algo-id-sensex-option-selling
+      author: Mahir
+      comment: "CWA Sensex Option Selling: BSE Algo ID 2088030090700011, Category 3"
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: algo_id
+                  value: '2088030090700011'
+              - column:
+                  name: algo_category
+                  value: '3'
+            where: "id = 45 OR strategy_source_id = 45"

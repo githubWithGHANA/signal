@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20251105-update-atm-type-inhouse
+      author: automated_migration
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: atm_type
+                  value: 'SyntheticAtm'
+            where: "category = 'inhouse' AND (atm_type IS NULL OR atm_type <> 'SyntheticAtm')"
+

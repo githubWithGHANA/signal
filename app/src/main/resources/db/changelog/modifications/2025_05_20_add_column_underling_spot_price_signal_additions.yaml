@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-entry-underling-spot-price-signal-additions
+      author: bhargava_g
+      changes:
+        - addColumn:
+            tableName: signal_additions
+            columns:
+              - column:
+                  name: entry_underling_spot_price
+                  type: INT

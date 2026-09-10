@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexUltaDeltaStrategyYamlInserts/ulta_delta_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexUltaDeltaStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexUltaDeltaStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

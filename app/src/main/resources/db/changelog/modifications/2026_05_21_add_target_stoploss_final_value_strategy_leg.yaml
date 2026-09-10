@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_05_21_add_target_stoploss_final_value_strategy_leg
+      author: mahir
+      changes:
+        - addColumn:
+            tableName: strategy_leg
+            columns:
+              - column:
+                  name: target_final_value
+                  type: BIGINT
+              - column:
+                  name: stoploss_final_value
+                  type: BIGINT

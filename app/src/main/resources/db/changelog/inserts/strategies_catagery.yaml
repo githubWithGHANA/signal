@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bhargava
+      changes:
+        - createSequence:
+            sequenceName: strategy_category_seq
+            startValue: 1
+
+        - insert:
+            tableName: strategy_category
+            columns:
+              - column:
+                  name: id
+                  value: 1  # Ensure this matches the ID generation strategy, modify as needed
+              - column:
+                  name: s_name
+                  value: "Momentum"
+              - column:
+                  name: s_desc
+                  value: "Momentum based strategy"
+              - column:
+                  name: s_category
+                  value: "Technical"
+              - column:
+                  name: status
+                  value: "Active"
+              - column:
+                  name: created_by
+                  value: "system"
+              - column:
+                  name: created_at
+                  valueDate: "2024-10-05T00:00:00"
+              - column:
+                  name: updated_by
+                  value: "system"
+              - column:
+                  name: updated_at
+                  valueDate: "2024-10-05T00:00:00"
+              - column:
+                  name: delete_indicator
+                  value: "N"
+
+
+        - insert:
+            tableName: strategy_category
+            columns:
+              - column:
+                  name: id
+                  value: 2  # Ensure this matches the ID generation strategy, modify as needed
+              - column:
+                  name: s_name
+                  value: "Momentum"
+              - column:
+                  name: s_desc
+                  value: "Momentum based strategy"
+              - column:
+                  name: s_category
+                  value: "Technical"
+              - column:
+                  name: status
+                  value: "Active"
+              - column:
+                  name: created_by
+                  value: "system"
+              - column:
+                  name: created_at
+                  valueDate: "2024-10-05T00:00:00"
+              - column:
+                  name: updated_by
+                  value: "system"
+              - column:
+                  name: updated_at
+                  valueDate: "2024-10-05T00:00:00"
+              - column:
+                  name: delete_indicator
+                  value: "N"

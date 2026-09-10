@@ -1,0 +1,2 @@
+id;strategy_id;profit_mtm_unit_type;profit_mtm_unit_value;stoploss_mtm_unit_value;exit_on_expiry_flag;exit_after_entry_days;exit-time;exit_hour_time;exit_mins_time;exit_sec_time;target_unit_toggle;target_unit_type;target_unit_value;stop_loss_unit_type;stop_loss_unit_toggle;stop_loss_unit_value;status;created_by;created_at;updated_by;updated_at;delete_indicator
+34;34;PercentOfCapital;10;15;No;3;2024-10-05T10:50:15;14;55;25;true;PercentOfCapital;50;PercentOfCapital;true;50;Stand by;Victoria;2024-06-25T12:40:00Z;Paul;2024-10-07T14:30:00Z;N

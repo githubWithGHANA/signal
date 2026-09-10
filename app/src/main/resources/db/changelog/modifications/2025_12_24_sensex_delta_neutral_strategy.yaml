@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: sensexDeltaNeutralStrategyYamlInserts/sensex_dn_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexDeltaNeutralStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: sensexDeltaNeutralStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

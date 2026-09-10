@@ -1,0 +1,7 @@
+id;admin_id;admin_name;first_name;middle_name;last_name;role_name;admin_level;email;password;phone_number;otp;otp_expiry;otp_status;status;created_by;created_at;updated_by;updated_at;delete_indicator
+1;1;Ash;John;A.;Doe;SuperAdmin;Level1;john.doe1@example.com;pass123;1234567890;987654;2024-11-25T12:00:00Z;Valid;Active;superadmin;2023-10-01T12:00:00Z;superadmin;2023-10-05T12:00:00Z;N
+2;2;Brock;Jane;B.;Smith;Admin;Level2;jane.smith@example.com;pass456;2345678901;234321;2024-11-25T11:30:00Z;Expired;Stand by;superadmin;2023-10-02T13:00:00Z;admin;2023-10-06T13:00:00Z;Y
+3;1;Misty;Bob;C.;Johnson;SubAdmin;Level3;melamkotivenkateswarlu@gmail.com;pass789;3456789012;876123;2024-11-26T10:00:00Z;Pending;Blocked;superadmin;2023-10-03T14:00:00Z;subadmin;2023-10-07T14:00:00Z;N
+4;4;John;Alice;D.;Williams;SuperAdmin;Level1;bhargavagonugunta123@gmail.com;pass101;4567890123;432876;2024-11-27T14:00:00Z;Valid;Live- Entered;superadmin;2023-10-04T15:00:00Z;superadmin;2023-10-08T15:00:00Z;N
+5;5;Asta;Charlie;E.;Brown;SuperAdmin;Level1;nagarohit619@gmail.com;pass121;5678901234;321987;2024-11-25T15:45:00Z;Valid;Exited;superadmin;2023-10-05T16:00:00Z;superadmin;2023-10-09T16:00:00Z;Y
+6;6;Helena;David;F.;Garcia;Admin;Level2;rayalaashok75@gmail.com;pass141;6789012345;654876;2024-11-28T13:00:00Z;Expired;Error Execution;superadmin;2023-10-06T17:00:00Z;admin;2023-10-10T17:00:00Z;Y

@@ -1,0 +1,153 @@
+databaseChangeLog:
+  - changeSet:
+      id: 100
+      author: imran
+      preConditions:
+        - onFail: MARK_RAN
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM signal.strategy WHERE id = 100
+      changes:
+        - loadData:
+            file: db/changelog/modifications/btfNiftyStrategyCSVInserts/btf_nifty_strategy.csv
+            tableName: strategy
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: sc_id
+                  type: integer
+              - column:
+                  name: name
+                  type: string
+              - column:
+                  name: description
+                  type: string
+              - column:
+                  name: type_of_strategy
+                  type: string
+              - column:
+                  name: underlying_id
+                  type: integer
+              - column:
+                  name: underling_type
+                  type: string
+              - column:
+                  name: s_position_type
+                  type: string
+              - column:
+                  name: status
+                  type: string
+              - column:
+                  name: atm_type
+                  type: string
+              - column:
+                  name: expiry
+                  type: string
+              - column:
+                  name: strategy_tag
+                  type: string
+              - column:
+                  name: admin_id
+                  type: integer
+              - column:
+                  name: expiry_type
+                  type: string
+              - column:
+                  name: category
+                  type: string
+              - column:
+                  name: min_capital
+                  type: decimal
+              - column:
+                  name: user_id
+                  type: integer
+              - column:
+                  name: multiplier
+                  type: decimal
+              - column:
+                  name: stop_loss
+                  type: decimal
+              - column:
+                  name: delta_slippage
+                  type: decimal
+              - column:
+                  name: target
+                  type: decimal
+              - column:
+                  name: execution_type
+                  type: string
+              - column:
+                  name: re_signal_count
+                  type: integer
+              - column:
+                  name: created_by
+                  type: string
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_by
+                  type: string
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: delete_indicator
+                  type: string
+              - column:
+                  name: draw_down
+                  type: decimal
+              - column:
+                  name: strategy_source_id
+                  type: integer
+
+  - changeSet:
+      id: 2
+      author: imran
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: min_capital
+                  value: 100000000
+            where: id = 100
+
+  - changeSet:
+      id: 3
+      author: imran
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: min_capital
+                  value: 100000000
+            where: "id = 100 OR strategy_source_id = 100"
+
+  - changeSet:
+      id: 4
+      author: imran
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: re_signal_count
+                  value: 1
+            where: "id = 100 OR strategy_source_id = 100"
+
+  - changeSet:
+      id: 5
+      author: imran
+      changes:
+        - update:
+            tableName: strategy
+            columns:
+              - column:
+                  name: min_capital
+                  value: 250000000
+            where: "id = 100 OR strategy_source_id = 100"

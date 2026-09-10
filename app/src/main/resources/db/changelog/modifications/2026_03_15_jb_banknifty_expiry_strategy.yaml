@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: jbBankniftyExpiryYamlInserts/jb_banknifty_expiry_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: jbBankniftyExpiryYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: jbBankniftyExpiryYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

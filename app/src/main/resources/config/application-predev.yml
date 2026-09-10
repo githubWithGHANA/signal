@@ -1,0 +1,84 @@
+
+spring:
+  jackson:
+    time-zone: Asia/Kolkata
+  datasource:
+    url: jdbc:postgresql://signal_db_dev:5432/signal_dev
+    username: dev_admin
+    password: bps@1122
+    driver-class-name: "org.postgresql.Driver"
+    profiles:
+      active: predev
+    hikari:
+      connection-timeout: 26000
+      idle-timeout: 30000
+      leak-detection-threshold: 300
+      maximum-pool-size: 50
+      minimum-idle: 5
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: signal
+        format_sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: signal
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000ms
+      jedis:
+        pool:
+          max-active: 20
+          min-idle: 10
+      password: "ba5fb0a30e26e83b2ac5b9e29e1b161e5c"
+
+server:
+  port: 8082
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: trace
+    root: debug
+    org:
+      springframework: debug
+    sql: fatal
+
+grpc:
+  client:
+    grpc-quantlab-service-xts:
+      address: static://localhost:9000
+      negotiation-type: plaintext
+    grpc-quantlab-service-tr:
+      address: static://localhost:9040
+      negotiation-type: plaintext
+
+xts:
+  location: "localhost"
+  port: 9000
+tr:
+  location: "localhost"
+  port: 9040
+
+email:
+  sender: mohammedimran0266@gmail.com
+
+ENDPOINT:
+  validate: https://ssologin-uat.dhanistocks.com/v1/partner/validate-session?clientId=
+  profile: https://internal-partner-uat.ibullssecurities.com/client-profile?clientId=
+  appID: quantlab
+  appKey: mtOwyowygskpv8r6is6kddxhjanvsbsl
+  xtsUrl: https://xts-uat.ibullssecurities.com
+
+threads:
+  pool:
+    Pnl: 2

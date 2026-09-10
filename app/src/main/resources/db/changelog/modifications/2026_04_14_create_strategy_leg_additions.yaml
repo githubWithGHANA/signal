@@ -1,0 +1,78 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_04_14_create_strategy_leg_additions_sequence
+      author: imran
+      changes:
+        - createSequence:
+            sequenceName: strategy_leg_additions_seq
+            startValue: 1000
+            incrementBy: 1
+
+  - changeSet:
+      id: 2026_04_14_create_strategy_leg_additions_table
+      author: imran
+      changes:
+        - createTable:
+            tableName: strategy_leg_additions
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: strategy_leg_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    unique: true
+              - column:
+                  name: target_type
+                  type: VARCHAR(16)
+              - column:
+                  name: entry_timeframe
+                  type: VARCHAR(8)
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+  - changeSet:
+      id: 2026_04_14_strategy_leg_add_leg_additions_fk
+      author: imran
+      changes:
+        - addColumn:
+            tableName: strategy_leg
+            columns:
+              - column:
+                  name: leg_additions_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    unique: true
+        - addForeignKeyConstraint:
+            baseTableName: strategy_leg
+            baseColumnNames: leg_additions_id
+            constraintName: fk_strategy_leg_leg_additions
+            referencedTableName: strategy_leg_additions
+            referencedColumnNames: id

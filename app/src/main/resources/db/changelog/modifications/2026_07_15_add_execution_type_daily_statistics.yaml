@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_07_15_add_execution_type_daily_statistics
+      author: codex
+      changes:
+        - addColumn:
+            tableName: daily_statistics
+            columns:
+              - column:
+                  name: execution_type
+                  type: VARCHAR(255)

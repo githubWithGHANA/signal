@@ -1,0 +1,2 @@
+id;sc_id;name;description;type_of_strategy;underlying_id;underling_type;s_position_type;status;atm_type;expiry;strategy_tag;admin_id;expiry_type;category;min_capital;user_id;multiplier;stop_loss;target;execution_type;re_signal_count;created_by;created_at;updated_by;updated_at;delete_indicator;draw_down;strategy_source_id
+44;2;Sensex Option Buying;Captures expiry decay.;diy;4;NA;Intraday;available;SpotAtm;CurrentWeek;SENSEX_BUYING;1;CurrentWeek;inhouse;100000000;1;1;1000;1300;LiveTrading;2;QuantLab;2024-06-12T14:50:00Z;QuantLab;2024-06-20T16:30:00Z;N;10;0

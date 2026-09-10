@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_05_29_add_brr_strategy_fields
+      author: imran
+      changes:
+        - addColumn:
+            tableName: strategy_addition
+            columns:
+              - column:
+                  name: brr_high
+                  type: FLOAT8
+              - column:
+                  name: brr_low
+                  type: FLOAT8
+              - column:
+                  name: brr_resistance
+                  type: FLOAT8
+              - column:
+                  name: brr_support
+                  type: FLOAT8
+              - column:
+                  name: brr_stop_loss
+                  type: FLOAT8
+              - column:
+                  name: brr_phase
+                  type: VARCHAR(50)
+              - column:
+                  name: brr_last_candle_time
+                  type: BIGINT
+              - column:
+                  name: brr_exit_buffer
+                  type: FLOAT8
+                  defaultValueNumeric: 1.0
+              - column:
+                  name: brr_direction
+                  type: VARCHAR(10)

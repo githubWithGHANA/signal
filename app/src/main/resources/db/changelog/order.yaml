@@ -1,0 +1,190 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: imran
+      changes:
+        - createTable:
+            tableName: order
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_order
+              - column:
+                  name: exchange_order_id
+                  type: VARCHAR(255)
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: app_user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: execution_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deployed_on
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: exchange_instrument_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: exchange_segment
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: underlying
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: instrument_name
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_exp_id
+                  type: BIGINT
+              - column:
+                  name: signal_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: strategy_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: login_id
+                  type: VARCHAR(255)
+              - column:
+                  name: app_order_id
+                  type: VARCHAR(255)
+              - column:
+                  name: reference_id
+                  type: VARCHAR(255)
+              - column:
+                  name: generated_by
+                  type: VARCHAR(255)
+              - column:
+                  name: category_type
+                  type: VARCHAR(255)
+              - column:
+                  name: order_side
+                  type: VARCHAR(255)
+              - column:
+                  name: order_type
+                  type: VARCHAR(255)
+              - column:
+                  name: product_type
+                  type: VARCHAR(255)
+              - column:
+                  name: time_in_force
+                  type: VARCHAR(255)
+              - column:
+                  name: stop_price
+                  type: BIGINT
+              - column:
+                  name: average_traded_price
+                  type: VARCHAR(255)
+              - column:
+                  name: leaves_quantity
+                  type: BIGINT
+              - column:
+                  name: cumulative_quantity
+                  type: BIGINT
+              - column:
+                  name: disclosed_quantity
+                  type: BIGINT
+              - column:
+                  name: generated_time
+                  type: VARCHAR(255)
+              - column:
+                  name: exchange_transact_time
+                  type: VARCHAR(255)
+              - column:
+                  name: last_update_time
+                  type: VARCHAR(255)
+              - column:
+                  name: expiry_date
+                  type: VARCHAR(255)
+              - column:
+                  name: cancel_reject_reason
+                  type: VARCHAR(255)
+              - column:
+                  name: unique_identifier
+                  type: VARCHAR(255)
+              - column:
+                  name: leg_status
+                  type: VARCHAR(255)
+              - column:
+                  name: message_code
+                  type: BIGINT
+              - column:
+                  name: message_version
+                  type: VARCHAR(255)
+              - column:
+                  name: token_id
+                  type: VARCHAR(255)
+              - column:
+                  name: application_type
+                  type: BIGINT
+              - column:
+                  name: unique_key
+                  type: VARCHAR(255)
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_by
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_indicator
+                  type: VARCHAR(255)
+
+        - createSequence:
+            sequenceName: orders_seq
+            incrementBy: 1
+            startValue: 1000

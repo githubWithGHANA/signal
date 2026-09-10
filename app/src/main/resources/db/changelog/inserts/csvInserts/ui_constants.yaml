@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your_name
+      changes:
+        - loadData:
+            file: db/changelog/inserts/csv/ui_constants.csv
+            tableName: ui_constants
+            separator: ";"
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              - column:
+                  name: field_name
+                  type: string
+              - column:
+                  name: description
+                  type: string
+              - column:
+                  name: code
+                  type: integer

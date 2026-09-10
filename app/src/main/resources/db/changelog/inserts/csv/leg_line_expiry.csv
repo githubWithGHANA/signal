@@ -1,0 +1,5 @@
+id,leg_exp_name,leg_line_expiry_date,created_by,created_at,updated_by,updated_at,delete_indicator
+1,CurrentWeek,2024-12-25,Jaganmohan,2024-08-01T09:30:00Z,Padmavathi,2024-10-01T11:00:00Z,N
+2,NextWeek,2024-11-30,Sai Kumar,2024-06-10T14:00:00Z,Rajalakshmi,2024-09-30T15:45:00Z,Y
+3,CurrentMonth,2024-10-20,Venkataramana,2024-07-20T16:00:00Z,Rajitha,2024-10-02T08:45:00Z,N
+4,NextMonth,2024-09-15,Balaji,2024-04-12T10:00:00Z,Malini,2024-10-03T09:20:00Z,N

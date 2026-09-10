@@ -1,0 +1,381 @@
+databaseChangeLog:
+#  - include:
+#        file: inserts/drop_create.yaml
+#        relativeToChangelogFile: true
+#  - include:
+#      file: db.changelog-masters.yaml
+#      relativeToChangelogFile: true
+  - include:
+      file: userroles.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: instrumentdetails.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: leglineexpiry.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: signaladditions.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: status.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: strategycategory.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: strikes.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: underlying.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: useradmins.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: appusers.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: userauthconstants.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: strategyadditions.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: strategies.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: appuserloginfo.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: entitydaysmapping.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: exitdetails.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: entrydetails.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: entrydays.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: positions.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: signals.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: stategiesLegs.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: order.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: deploymentErrors.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: entry_details_entry_days.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: fk_constraints.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: uiconstants.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: tokenloginfo.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_04_03_add_column_user_auth_constants.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_04_15_add_column_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: modifications/2025_05_01_add_is_hidden_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_05_01_add_unique_name_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+     file: inserts/csvInserts/underlying.yaml
+     relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/userroles.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/user_admin.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/app_user.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/strategy_category.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/entry_days.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/exit_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/signal.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/strategy_leg.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/leg_line_expiry.yaml
+      relativeToChangelogFile: true
+#  - include:
+#      file: inserts/csvInserts/order.yaml
+#      relativeToChangelogFile: true
+#  - include:
+#      file: inserts/csvInserts/position.yaml
+#      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/user_auth_constants.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/entry_details_entry_days.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inserts/csvInserts/ui_constants.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_05_09_strategy_collar_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_05_14_tr_token_size.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_05_16_add_broker_name_id_userauthconstants.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_05_16_add_column_signal_additions.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: modifications/2025_05_20_add_column_underling_spot_price_signal_additions.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/yamlInserts/userRoles.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_05_20_add_column_source_type_orders.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_06_03_add_strategy_approval.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/yamlInserts/userRole.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_08_16_add_column_executed_time_strategy_leg.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_08_04_add_api_access_logs.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_09_18_add_column_premium_capital_exit_details.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_10_03_increase_size_in_userConstants.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_09_25_phoenix_strategy_addition.yaml
+      relativeToChangelogFile: true
+ 
+  - include:
+      file: modifications/2025_10_05_create_dailyStatistics_table.yaml
+      relativeToChangelogFile: true
+      
+  - include:
+      file: modifications/2025_10_09_strategy_table_todays_pnl.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_10_12_ulta_delta_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_10_22_strategy_table_total_pnl.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_10_27_add_index_signal_user_pos_exec.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_11_21_add_index_strategy_user_category.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_11_21_add_index_entry_exit_strategyid.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_11_05_update_atm_type_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_09_25_phoenix_atm_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_07_29_add_strategy_addition_fields.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_10_26_accumulation_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_08_28_add_tsl_fields_in_strategy_leg.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_03_jodi_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_11_nifty_option_selling_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_11_nifty_option_buying_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_11_sensex_option_selling_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_11_sensex_option_buying_strategy_addition.yaml
+      relativeToChangelogFile: true
+  
+  - include:
+      file: modifications/2025_12_11_jodi_arbitrage.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_16_add_missing_indexes.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_24_sensex_delta_neutral_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_24_sensex_delta_neutral_Hedge_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_24_sensex_rolling_straddle_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_24_sensex_ulta_delta_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_25_sensex_atm_phoenix_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_25_sensex_phoenix_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_25_sensex_scalper_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_25_sensex_jodi_arbitrage.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_29_change_expiry_nifty_option_selling_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2025_12_29_fix_sensex_underlying.yaml
+      relativeToChangelogFile: true
+      
+  - include:
+      file: modifications/2026_01_01_jodi_arbitrage_v2.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_03_24_update_algo_id_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_05_21_add_target_stoploss_final_value_strategy_leg.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_05_21_increase_error_code_size_deployment_errors.yaml
+      relativeToChangelogFile: true
+
+      file: modifications/2026_04_14_create_strategy_leg_additions.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_03_15_jb_banknifty_expiry_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_03_15_jb_nifty_expiry_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_03_15_jb610_supertrend_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_03_16_ema_exhaustion_bb_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_05_26_add_column_exit_strategy_date_exit_details.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_05_29_btf_strategy_addition.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_05_29_btf_nifty_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_05_29_btf_banknifty_strategy.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: modifications/2026_07_15_add_execution_type_daily_statistics.yaml
+      relativeToChangelogFile: true

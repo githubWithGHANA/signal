@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: accumulationStrategyYamlInserts/accumulation_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: accumulationStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: accumulationStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: btfNiftyStrategyYamlInserts/btf_nifty_strategy.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: btfNiftyStrategyYamlInserts/entry_details.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: btfNiftyStrategyYamlInserts/exit_details.yaml
+      relativeToChangelogFile: true
