@@ -16,9 +16,9 @@ phases:
     commands:
       - echo "Logging in to Amazon ECR..."
       - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-      - AWS_REGION=$(aws configure get region)
-      - ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_URI
+      - ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY
+      - echo "ECR URI: $ECR_URI"
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
   build:
     commands:
@@ -35,10 +35,3 @@ phases:
       - docker push $ECR_URI:$CODEBUILD_BUILD_NUMBER
       - docker push $ECR_URI:latest
       - echo "Build completed on $(date)"
-
-artifacts:
-  files:
-    - appspec.yml
-    - docker-compose.yml
-    - scripts/**/*
-    - init-scripts/**/*
