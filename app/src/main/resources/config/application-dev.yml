@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/signal_dev
     username: dev_admin
-    password: bps@1122
+    password: SignalDB@2026!
     driver-class-name: "org.postgresql.Driver"
     profiles:
       active: dev

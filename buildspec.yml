@@ -4,6 +4,7 @@ env:
   variables:
     AWS_REGION: ap-south-1
     ECR_REPOSITORY: signal-app
+    EC2_INSTANCE_ID: i-028d6adbca69395e0
 
 phases:
   install:
@@ -34,4 +35,19 @@ phases:
       - echo "Pushing Docker image..."
       - 'docker push $ECR_URI:$CODEBUILD_BUILD_NUMBER'
       - 'docker push $ECR_URI:latest'
-      - echo "Build completed on $(date)"
+
+      - echo "Starting deployment on EC2 through SSM..."
+      - |
+        aws ssm send-command \
+          --instance-ids "$EC2_INSTANCE_ID" \
+          --document-name "AWS-RunShellScript" \
+          --parameters 'commands=[
+            "cd /opt/signal",
+            "aws ecr get-login-password --region ap-south-1 | sudo docker login --username AWS --password-stdin 921829859169.dkr.ecr.ap-south-1.amazonaws.com",
+            "sudo docker compose pull signal_app",
+            "sudo docker compose up -d signal_app",
+            "sudo docker compose ps"
+          ]' \
+          --region "$AWS_REGION"
+
+      - echo "Build and deployment command submitted on $(date)"

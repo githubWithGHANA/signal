@@ -14,7 +14,7 @@ services:
     image: postgres:14
     environment:
       POSTGRES_USER: dev_admin
-      POSTGRES_PASSWORD: bps@1122
+      POSTGRES_PASSWORD: SignalDB@2026!
       POSTGRES_DB: signal_dev
     ports:
       - "5430:5432"
