@@ -2,16 +2,29 @@ version: "3.8"
 
 services:
   signal_app:
-    image: 205930636356.dkr.ecr.ap-south-1.amazonaws.com/dev-signal-engine-indiabulls-repo:latest
+    image: 921829859169.dkr.ecr.ap-south-1.amazonaws.com/signal-app:latest
+    container_name: signal_app
     ports:
       - "8081:8082"
     environment:
-      - SPRING_PROFILES_ACTIVE=prod
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:postgresql://signal_db:5432/signal_dev
+      SPRING_DATASOURCE_USERNAME: dev_admin
+      SPRING_DATASOURCE_PASSWORD: SignalDB@2026!
+      SPRING_DATA_REDIS_HOST: signal_redis
+      SPRING_DATA_REDIS_PORT: "6379"
+      SPRING_DATA_REDIS_PASSWORD: ba5fb0a30e26e83b2ac5b9e29e1b161e5c
+    depends_on:
+      signal_db:
+        condition: service_healthy
+      signal_redis:
+        condition: service_healthy
     networks:
       - app_network
 
   signal_db:
     image: postgres:14
+    container_name: signal_db
     environment:
       POSTGRES_USER: dev_admin
       POSTGRES_PASSWORD: SignalDB@2026!
@@ -20,7 +33,24 @@ services:
       - "5430:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init-scripts:/docker-entrypoint-initdb.d
+      - ./init-scripts:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dev_admin -d signal_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - app_network
+
+  signal_redis:
+    image: redis:7-alpine
+    container_name: signal_redis
+    command: redis-server --requirepass ba5fb0a30e26e83b2ac5b9e29e1b161e5c
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "ba5fb0a30e26e83b2ac5b9e29e1b161e5c", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     networks:
       - app_network
 
