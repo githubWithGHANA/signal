@@ -26,7 +26,8 @@ fi
 echo "Waiting for application..."
 sleep 10
 
-# App runs on 8082 with context-path /ql (mapped to host 8081 in compose)
+echo "Checking backend application..."
+
 HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/ql/)
 
 if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 400 ]; then
