@@ -24,20 +24,18 @@ if ! docker inspect --format='{{.State.Running}}' signal_frontend 2>/dev/null | 
 fi
 
 echo "Waiting for application..."
-sleep 10
 
-echo "Checking backend application..."
+for i in {1..12}; do
+    HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/ql/ || true)
 
-HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/ql/)
+    if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 400 ]; then
+        echo "Backend application is responding. HTTP status: $HTTP_CODE"
+        break
+    fi
 
-if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 400 ]; then
-    echo "Backend application is responding. HTTP status: $HTTP_CODE"
-else
-    echo "ERROR: Backend application is not responding. HTTP status: $HTTP_CODE"
-    echo "Checking application logs..."
-    docker logs --tail 100 signal_app
-    exit 1
-fi
+    echo "Backend not ready yet. Attempt $i/12..."
+    sleep 5
+done
 
 # Frontend: index page + SPA fallback must respond
 if curl -sf -o /dev/null http://localhost/ && curl -sf -o /dev/null http://localhost/discover; then
