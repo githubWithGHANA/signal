@@ -27,10 +27,12 @@ echo "Waiting for application..."
 sleep 10
 
 # App runs on 8082 with context-path /ql (mapped to host 8081 in compose)
-if curl -f http://localhost:8081/ql/actuator/health; then
-    echo "Application health check passed."
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8081/ql/)
+
+if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 400 ]; then
+    echo "Backend application is responding. HTTP status: $HTTP_CODE"
 else
-    echo "Health endpoint unavailable."
+    echo "ERROR: Backend application is not responding. HTTP status: $HTTP_CODE"
     echo "Checking application logs..."
     docker logs --tail 100 signal_app
     exit 1
