@@ -24,6 +24,16 @@ services:
     networks:
       - app_network
 
+  signal_frontend:
+    image: ${FRONTEND_REPO:-921829859169.dkr.ecr.ap-south-1.amazonaws.com/signal-frontend}:${IMAGE_TAG:-latest}
+    container_name: signal_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - signal_app
+    networks:
+      - app_network
+
   signal_db:
     image: postgres:14
     container_name: signal_db

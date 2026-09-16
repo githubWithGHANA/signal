@@ -35,6 +35,7 @@ docker pull "$ECR_REPO:$IMAGE_TAG"
 echo "Starting containers..."
 docker compose up -d signal_db
 docker compose up -d signal_app
+docker compose up -d signal_frontend
 
 echo "Containers started."
 

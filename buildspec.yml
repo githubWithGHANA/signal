@@ -37,27 +37,17 @@ phases:
       - 'docker push $ECR_URI:$CODEBUILD_BUILD_NUMBER'
       - 'docker push $ECR_URI:latest'
 
-      - echo "Packaging deployment bundle for CodeDeploy (signal-deploy / signal-dg)..."
-      - mkdir -p bundle/scripts
-      - cp docker-compose.yml bundle/
-      - cp scripts/start-docker.sh scripts/stop-docker.sh scripts/validate.sh bundle/scripts/
-      - chmod +x bundle/scripts/*.sh
-      - cp appspec.yml bundle/
-      - |
-        cat > bundle/imagedefinitions.json <<EOF
-        [
-          {
-            "name": "signal_app",
-            "imageUri": "$(cat /tmp/ecr_uri.txt):latest"
-          }
-        ]
-        EOF
+      - echo "Deployment revision = CodeBuild output artifact (appspec.yml must be at artifact root)"
       - echo "Image deployed -> $(cat /tmp/ecr_uri.txt):latest"
-      - cd bundle && zip -r ../signal-deploy-bundle.zip . && cd ..
-      - echo "Bundle contents:" && unzip -l signal-deploy-bundle.zip
+      - echo "Revision contents: appspec.yml, docker-compose.yml, scripts/"
 
+# CodeBuild zips these files itself into the output artifact.
+# CodeDeploy's deployment-archive therefore contains appspec.yml at the ROOT.
+# Do NOT zip manually here - a nested zip breaks the appspec lookup.
 artifacts:
   files:
-    - signal-deploy-bundle.zip
+    - appspec.yml
+    - docker-compose.yml
+    - "scripts/*"
   discard-paths: no
 

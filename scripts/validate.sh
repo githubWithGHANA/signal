@@ -18,6 +18,11 @@ if ! docker inspect --format='{{.State.Running}}' signal_app 2>/dev/null | grep 
     exit 1
 fi
 
+if ! docker inspect --format='{{.State.Running}}' signal_frontend 2>/dev/null | grep -q true; then
+    echo "ERROR: signal_frontend is not running."
+    exit 1
+fi
+
 echo "Waiting for application..."
 sleep 10
 
@@ -28,6 +33,15 @@ else
     echo "Health endpoint unavailable."
     echo "Checking application logs..."
     docker logs --tail 100 signal_app
+    exit 1
+fi
+
+# Frontend: index page + SPA fallback must respond
+if curl -sf -o /dev/null http://localhost/ && curl -sf -o /dev/null http://localhost/discover; then
+    echo "Frontend health check passed."
+else
+    echo "ERROR: frontend not responding on port 80."
+    docker logs --tail 50 signal_frontend
     exit 1
 fi
 
