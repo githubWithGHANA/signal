@@ -2,9 +2,8 @@ version: 0.2
 
 env:
   variables:
-    AWS_REGION: ap-south-1
-    ECR_REPOSITORY: signal-app
-    # IMAGE_TAG = CodeBuild build number (versioned); :latest also updated for compose default.
+    IMAGE_NAME: signal-app
+    ECR_REPO: 921829859169.dkr.ecr.ap-south-1.amazonaws.com/signal-app
 
 phases:
   install:
@@ -16,38 +15,30 @@ phases:
   pre_build:
     commands:
       - echo "Logging in to Amazon ECR..."
-      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-      - ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY
-      - 'echo "ECR URI: $ECR_URI"'
-      - 'aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com'
-      - echo "$ECR_URI" > /tmp/ecr_uri.txt
+      - aws --region ap-south-1 ecr get-login-password | docker login --username AWS --password-stdin 921829859169.dkr.ecr.ap-south-1.amazonaws.com
 
   build:
     commands:
-      - echo "Build started on $(date)"
-      - chmod +x gradlew
+      - echo "Build started on `date`"
       - ./gradlew app:bootJar --stacktrace
       - echo "Building Docker image..."
-      - 'docker build -t $ECR_URI:$CODEBUILD_BUILD_NUMBER .'
-      - 'docker tag $ECR_URI:$CODEBUILD_BUILD_NUMBER $ECR_URI:latest'
+      - docker build -t $IMAGE_NAME:${CODEBUILD_BUILD_NUMBER} .
 
   post_build:
     commands:
-      - echo "Pushing Docker image..."
-      - 'docker push $ECR_URI:$CODEBUILD_BUILD_NUMBER'
-      - 'docker push $ECR_URI:latest'
+      - echo "Build completed on `date`"
+      - "docker tag $IMAGE_NAME:${CODEBUILD_BUILD_NUMBER} $ECR_REPO:${CODEBUILD_BUILD_NUMBER}"
+      - "docker tag $IMAGE_NAME:${CODEBUILD_BUILD_NUMBER} $ECR_REPO:latest"
+      - "docker push $ECR_REPO:${CODEBUILD_BUILD_NUMBER}"
+      - "docker push $ECR_REPO:latest"
 
-      - echo "Deployment revision = CodeBuild output artifact (appspec.yml must be at artifact root)"
-      - echo "Image deployed -> $(cat /tmp/ecr_uri.txt):latest"
-      - echo "Revision contents: appspec.yml, docker-compose.yml, scripts/"
+cache:
+  paths:
+    - '/root/.gradle/caches/**/*'
+    - '/root/.gradle/wrapper/**/*'
 
-# CodeBuild zips these files itself into the output artifact.
-# CodeDeploy's deployment-archive therefore contains appspec.yml at the ROOT.
-# Do NOT zip manually here - a nested zip breaks the appspec lookup.
 artifacts:
   files:
-    - appspec.yml
-    - docker-compose.yml
-    - "scripts/*"
-  discard-paths: no
-
+    - 'app/build/libs/app-0.0.1-SNAPSHOT.jar'
+    - 'appspec.yml'
+    - 'scripts/**/*'
