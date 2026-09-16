@@ -4,7 +4,7 @@ env:
   variables:
     AWS_REGION: ap-south-1
     ECR_REPOSITORY: signal-app
-    EC2_INSTANCE_ID: i-028d6adbca69395e0
+    # IMAGE_TAG = CodeBuild build number (versioned); :latest also updated for compose default.
 
 phases:
   install:
@@ -20,6 +20,7 @@ phases:
       - ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY
       - 'echo "ECR URI: $ECR_URI"'
       - 'aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com'
+      - echo "$ECR_URI" > /tmp/ecr_uri.txt
 
   build:
     commands:
@@ -36,18 +37,27 @@ phases:
       - 'docker push $ECR_URI:$CODEBUILD_BUILD_NUMBER'
       - 'docker push $ECR_URI:latest'
 
-      - echo "Starting deployment on EC2 through SSM..."
+      - echo "Packaging deployment bundle for CodeDeploy (signal-deploy / signal-dg)..."
+      - mkdir -p bundle/scripts
+      - cp docker-compose.yml bundle/
+      - cp scripts/start-docker.sh scripts/stop-docker.sh scripts/validate.sh bundle/scripts/
+      - chmod +x bundle/scripts/*.sh
+      - cp appspec.yml bundle/
       - |
-        aws ssm send-command \
-          --instance-ids "$EC2_INSTANCE_ID" \
-          --document-name "AWS-RunShellScript" \
-          --parameters 'commands=[
-            "cd /opt/signal",
-            "aws ecr get-login-password --region ap-south-1 | sudo docker login --username AWS --password-stdin 921829859169.dkr.ecr.ap-south-1.amazonaws.com",
-            "sudo docker compose pull signal_app",
-            "sudo docker compose up -d signal_app",
-            "sudo docker compose ps"
-          ]' \
-          --region "$AWS_REGION"
+        cat > bundle/imagedefinitions.json <<EOF
+        [
+          {
+            "name": "signal_app",
+            "imageUri": "$(cat /tmp/ecr_uri.txt):latest"
+          }
+        ]
+        EOF
+      - echo "Image deployed -> $(cat /tmp/ecr_uri.txt):latest"
+      - cd bundle && zip -r ../signal-deploy-bundle.zip . && cd ..
+      - echo "Bundle contents:" && unzip -l signal-deploy-bundle.zip
 
-      - echo "Build and deployment command submitted on $(date)"
+artifacts:
+  files:
+    - signal-deploy-bundle.zip
+  discard-paths: no
+

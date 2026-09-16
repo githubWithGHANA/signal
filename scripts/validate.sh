@@ -21,7 +21,8 @@ fi
 echo "Waiting for application..."
 sleep 10
 
-if curl -f http://localhost:8081/actuator/health; then
+# App runs on 8082 with context-path /ql (mapped to host 8081 in compose)
+if curl -f http://localhost:8081/ql/actuator/health; then
     echo "Application health check passed."
 else
     echo "Health endpoint unavailable."

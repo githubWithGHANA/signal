@@ -1,19 +1,21 @@
-version: "3.8"
-
 services:
   signal_app:
-    image: 921829859169.dkr.ecr.ap-south-1.amazonaws.com/signal-app:latest
+    image: ${ECR_REPO:-921829859169.dkr.ecr.ap-south-1.amazonaws.com/signal-app}:${IMAGE_TAG:-latest}
     container_name: signal_app
     ports:
       - "8081:8082"
     environment:
-      SPRING_PROFILES_ACTIVE: prod
-      SPRING_DATASOURCE_URL: jdbc:postgresql://signal_db:5432/signal_dev
-      SPRING_DATASOURCE_USERNAME: dev_admin
-      SPRING_DATASOURCE_PASSWORD: SignalDB@2026!
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILE:-prod}
+      # --- Database: compose service signal_db (overrides application-prod.yml) ---
+      SPRING_DATASOURCE_URL: jdbc:postgresql://signal_db:5432/${DB_NAME:-signal_dev}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER:-dev_admin}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-SignalDB@2026!}
+      # --- Redis: compose service signal_redis (overrides application-prod.yml) ---
       SPRING_DATA_REDIS_HOST: signal_redis
       SPRING_DATA_REDIS_PORT: "6379"
-      SPRING_DATA_REDIS_PASSWORD: ba5fb0a30e26e83b2ac5b9e29e1b161e5c
+      SPRING_DATA_REDIS_PASSWORD: ${REDIS_PASSWORD:-ba5fb0a30e26e83b2ac5b9e29e1b161e5c}
+      # --- Broker SSO/XTS app key (EndpointProperties binds prefix "endpoint") ---
+      ENDPOINT_APPKEY: ${BROKER_APPKEY:-mOOcxatz754ndrsrryzeh5snfncpcwka}
     depends_on:
       signal_db:
         condition: service_healthy
@@ -26,9 +28,9 @@ services:
     image: postgres:14
     container_name: signal_db
     environment:
-      POSTGRES_USER: dev_admin
-      POSTGRES_PASSWORD: SignalDB@2026!
-      POSTGRES_DB: signal_dev
+      POSTGRES_USER: ${DB_USER:-dev_admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-SignalDB@2026!}
+      POSTGRES_DB: ${DB_NAME:-signal_dev}
     ports:
       - "5430:5432"
     volumes:
@@ -45,9 +47,11 @@ services:
   signal_redis:
     image: redis:7-alpine
     container_name: signal_redis
-    command: redis-server --requirepass ba5fb0a30e26e83b2ac5b9e29e1b161e5c
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-ba5fb0a30e26e83b2ac5b9e29e1b161e5c}
+    command: ["sh", "-c", "redis-server --requirepass \"$$REDIS_PASSWORD\""]
     healthcheck:
-      test: ["CMD", "redis-cli", "-a", "ba5fb0a30e26e83b2ac5b9e29e1b161e5c", "ping"]
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping | grep PONG"]
       interval: 10s
       timeout: 5s
       retries: 10

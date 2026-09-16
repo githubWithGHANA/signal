@@ -1,0 +1,28 @@
+version: 0.0
+os: linux
+
+files:
+  # Bundle contents (docker-compose.yml) land in the app dir on the EC2 host.
+  - source: /
+    destination: /opt/signal
+
+file_exists_behavior: OVERWRITE
+
+hooks:
+  # Stop the running app container before new files land.
+  ApplicationStop:
+    - location: scripts/stop-docker.sh
+      timeout: 60
+      runas: root
+
+  # ECR login, pull the image CodeBuild just pushed, start compose stack.
+  AfterInstall:
+    - location: scripts/start-docker.sh
+      timeout: 300
+      runas: root
+
+  # Health check: containers running + actuator health endpoint.
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 120
+      runas: root
