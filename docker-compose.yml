@@ -1,3 +1,7 @@
+# Signal stack.
+# NOTE: secrets are NOT stored in this file.
+# scripts/start-docker.sh exports them from AWS SSM Parameter Store
+# before running compose. Do not add secret fallback values back.
 services:
   signal_app:
     image: ${ECR_REPO:-921829859169.dkr.ecr.ap-south-1.amazonaws.com/signal-app}:${IMAGE_TAG:-latest}
@@ -7,15 +11,15 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: ${SPRING_PROFILE:-prod}
       # --- Database: compose service signal_db (overrides application-prod.yml) ---
-      SPRING_DATASOURCE_URL: jdbc:postgresql://signal_db:5432/${DB_NAME:-signal_dev}
-      SPRING_DATASOURCE_USERNAME: ${DB_USER:-dev_admin}
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-SignalDB@2026!}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://signal_db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
       # --- Redis: compose service signal_redis (overrides application-prod.yml) ---
       SPRING_DATA_REDIS_HOST: signal_redis
       SPRING_DATA_REDIS_PORT: "6379"
-      SPRING_DATA_REDIS_PASSWORD: ${REDIS_PASSWORD:-ba5fb0a30e26e83b2ac5b9e29e1b161e5c}
+      SPRING_DATA_REDIS_PASSWORD: ${REDIS_PASSWORD}
       # --- Broker SSO/XTS app key (EndpointProperties binds prefix "endpoint") ---
-      ENDPOINT_APPKEY: ${BROKER_APPKEY:-mOOcxatz754ndrsrryzeh5snfncpcwka}
+      ENDPOINT_APPKEY: ${BROKER_APPKEY}
     depends_on:
       signal_db:
         condition: service_healthy
@@ -38,16 +42,16 @@ services:
     image: postgres:14
     container_name: signal_db
     environment:
-      POSTGRES_USER: ${DB_USER:-dev_admin}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-SignalDB@2026!}
-      POSTGRES_DB: ${DB_NAME:-signal_dev}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - "5430:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init-scripts:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U dev_admin -d signal_dev"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 10s
       timeout: 5s
       retries: 10
@@ -58,7 +62,7 @@ services:
     image: redis:7-alpine
     container_name: signal_redis
     environment:
-      REDIS_PASSWORD: ${REDIS_PASSWORD:-ba5fb0a30e26e83b2ac5b9e29e1b161e5c}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
     command: ["sh", "-c", "redis-server --requirepass \"$$REDIS_PASSWORD\""]
     healthcheck:
       test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" ping | grep PONG"]

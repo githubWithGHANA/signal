@@ -38,8 +38,13 @@ cache:
     - '/root/.gradle/caches/**/*'
     - '/root/.gradle/wrapper/**/*'
 
+# CodeBuild zips these files into the output artifact itself.
+# appspec.yml must sit at the artifact ROOT for CodeDeploy to find it.
+# docker-compose.yml must ship in the bundle so /opt/signal gets the
+# current compose file on every deploy (do not remove).
 artifacts:
   files:
     - 'app/build/libs/app-0.0.1-SNAPSHOT.jar'
     - 'appspec.yml'
+    - 'docker-compose.yml'
     - 'scripts/**/*'

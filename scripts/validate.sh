@@ -37,6 +37,15 @@ for i in {1..12}; do
     sleep 5
 done
 
+# Backend must have answered inside the retry window - never mark a
+# deployment successful with the application down.
+if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "400" ]; then
+    echo "ERROR: backend did not become ready after 12 attempts (last HTTP status: ${HTTP_CODE:-none})."
+    echo "Checking application logs..."
+    docker logs --tail 100 signal_app
+    exit 1
+fi
+
 # Frontend: index page + SPA fallback must respond
 if curl -sf -o /dev/null http://localhost/ && curl -sf -o /dev/null http://localhost/discover; then
     echo "Frontend health check passed."

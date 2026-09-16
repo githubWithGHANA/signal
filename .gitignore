@@ -5,7 +5,9 @@ build/
 .idea/
 /.idea
 .idea/*
-
+.env.*
+!.env.example
+.env
 /build/*
 app/src/main/resources/config/application.yml
 /client/build
